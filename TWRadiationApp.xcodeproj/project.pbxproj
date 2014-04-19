@@ -27,6 +27,8 @@
 		379B122A19025E9700A336D7 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122919025E9700A336D7 /* InfoViewController.m */; };
 		379B122D19025EBF00A336D7 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122C19025EBF00A336D7 /* StatisticsViewController.m */; };
 		379B1236190268A000A336D7 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B1235190268A000A336D7 /* MyTabBarController.m */; };
+		379B123919026D4E00A336D7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379B123819026D4E00A336D7 /* CoreLocation.framework */; };
+		379B123C19026FE500A336D7 /* CoreAPIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B123B19026FE500A336D7 /* CoreAPIWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,9 @@
 		379B122C19025EBF00A336D7 /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatisticsViewController.m; path = View/StatisticsViewController.m; sourceTree = "<group>"; };
 		379B1234190268A000A336D7 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTabBarController.h; path = View/MyTabBarController.h; sourceTree = "<group>"; };
 		379B1235190268A000A336D7 /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTabBarController.m; path = View/MyTabBarController.m; sourceTree = "<group>"; };
+		379B123819026D4E00A336D7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		379B123A19026FE500A336D7 /* CoreAPIWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreAPIWrapper.h; path = Core/CoreAPIWrapper.h; sourceTree = "<group>"; };
+		379B123B19026FE500A336D7 /* CoreAPIWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreAPIWrapper.m; path = Core/CoreAPIWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				379B123919026D4E00A336D7 /* CoreLocation.framework in Frameworks */,
 				3744848E19023332008FD15C /* CoreGraphics.framework in Frameworks */,
 				3744849019023332008FD15C /* UIKit.framework in Frameworks */,
 				3744848C19023332008FD15C /* Foundation.framework in Frameworks */,
@@ -119,6 +125,7 @@
 		3744848A19023332008FD15C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				379B123819026D4E00A336D7 /* CoreLocation.framework */,
 				3744848B19023332008FD15C /* Foundation.framework */,
 				3744848D19023332008FD15C /* CoreGraphics.framework */,
 				3744848F19023332008FD15C /* UIKit.framework */,
@@ -130,6 +137,7 @@
 		3744849119023332008FD15C /* TWRadiationApp */ = {
 			isa = PBXGroup;
 			children = (
+				379B123719026C2600A336D7 /* Core */,
 				374484C719023A49008FD15C /* Library */,
 				374484C31902354A008FD15C /* Controller */,
 				3744849A19023332008FD15C /* AppDelegate.h */,
@@ -196,6 +204,15 @@
 				374484CC19023AED008FD15C /* SWRevealViewController.m */,
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		379B123719026C2600A336D7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				379B123A19026FE500A336D7 /* CoreAPIWrapper.h */,
+				379B123B19026FE500A336D7 /* CoreAPIWrapper.m */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +319,7 @@
 				3744849C19023332008FD15C /* AppDelegate.m in Sources */,
 				3744849819023332008FD15C /* main.m in Sources */,
 				379B122A19025E9700A336D7 /* InfoViewController.m in Sources */,
+				379B123C19026FE500A336D7 /* CoreAPIWrapper.m in Sources */,
 				374484CD19023AED008FD15C /* SWRevealViewController.m in Sources */,
 				379B122D19025EBF00A336D7 /* StatisticsViewController.m in Sources */,
 			);
@@ -428,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TWRadiationApp/TWRadiationApp-Prefix.pch";
 				INFOPLIST_FILE = "TWRadiationApp/TWRadiationApp-Info.plist";
@@ -441,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TWRadiationApp/TWRadiationApp-Prefix.pch";
 				INFOPLIST_FILE = "TWRadiationApp/TWRadiationApp-Info.plist";
