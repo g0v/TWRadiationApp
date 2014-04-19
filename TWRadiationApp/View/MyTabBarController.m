@@ -1,26 +1,26 @@
 //
-//  LauncherViewController.m
+//  MyTabBarController.m
 //  TWRadiationApp
 //
 //  Created by Kent Huang on 2014/4/19.
 //  Copyright (c) 2014年 g0v.tw. All rights reserved.
 //
 
-#import "LauncherViewController.h"
+#import "MyTabBarController.h"
+#import "SWRevealViewController.h"
 
-@interface LauncherViewController ()
+@interface MyTabBarController ()
 
 @end
 
-@implementation LauncherViewController
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
+@implementation MyTabBarController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    menuButton.target = self.revealViewController;
+    menuButton.action = @selector(revealToggle:);
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning

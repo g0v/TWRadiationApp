@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LauncherViewController : UIViewController
+@interface LauncherViewController : UIViewController <UITabBarControllerDelegate>
+{
 
+}
 @end

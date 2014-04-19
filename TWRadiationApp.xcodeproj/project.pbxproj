@@ -14,14 +14,19 @@
 		3744849819023332008FD15C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3744849719023332008FD15C /* main.m */; };
 		3744849C19023332008FD15C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3744849B19023332008FD15C /* AppDelegate.m */; };
 		3744849F19023332008FD15C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3744849D19023332008FD15C /* Main.storyboard */; };
-		374484A219023332008FD15C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374484A119023332008FD15C /* FirstViewController.m */; };
-		374484A519023332008FD15C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374484A419023332008FD15C /* SecondViewController.m */; };
 		374484A719023332008FD15C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374484A619023332008FD15C /* Images.xcassets */; };
 		374484AE19023332008FD15C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374484AD19023332008FD15C /* XCTest.framework */; };
 		374484AF19023332008FD15C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744848B19023332008FD15C /* Foundation.framework */; };
 		374484B019023332008FD15C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744848F19023332008FD15C /* UIKit.framework */; };
 		374484B819023332008FD15C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 374484B619023332008FD15C /* InfoPlist.strings */; };
 		374484BA19023332008FD15C /* TWRadiationAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 374484B919023332008FD15C /* TWRadiationAppTests.m */; };
+		374484C61902358F008FD15C /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374484C51902358F008FD15C /* LauncherViewController.m */; };
+		374484CD19023AED008FD15C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374484CC19023AED008FD15C /* SWRevealViewController.m */; };
+		374484D019023BF8008FD15C /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374484CF19023BF8008FD15C /* SidebarViewController.m */; };
+		379B122719025E5C00A336D7 /* RadiatonMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122619025E5C00A336D7 /* RadiatonMapViewController.m */; };
+		379B122A19025E9700A336D7 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122919025E9700A336D7 /* InfoViewController.m */; };
+		379B122D19025EBF00A336D7 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122C19025EBF00A336D7 /* StatisticsViewController.m */; };
+		379B1236190268A000A336D7 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B1235190268A000A336D7 /* MyTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +51,26 @@
 		3744849A19023332008FD15C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3744849B19023332008FD15C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3744849E19023332008FD15C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		374484A019023332008FD15C /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		374484A119023332008FD15C /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		374484A319023332008FD15C /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		374484A419023332008FD15C /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		374484A619023332008FD15C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		374484AC19023332008FD15C /* TWRadiationAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TWRadiationAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		374484AD19023332008FD15C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		374484B519023332008FD15C /* TWRadiationAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TWRadiationAppTests-Info.plist"; sourceTree = "<group>"; };
 		374484B719023332008FD15C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		374484B919023332008FD15C /* TWRadiationAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWRadiationAppTests.m; sourceTree = "<group>"; };
+		374484C41902358F008FD15C /* LauncherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LauncherViewController.h; path = View/LauncherViewController.h; sourceTree = "<group>"; };
+		374484C51902358F008FD15C /* LauncherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LauncherViewController.m; path = View/LauncherViewController.m; sourceTree = "<group>"; };
+		374484CB19023AED008FD15C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = Library/SWRevealViewController.h; sourceTree = "<group>"; };
+		374484CC19023AED008FD15C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = Library/SWRevealViewController.m; sourceTree = "<group>"; };
+		374484CE19023BF8008FD15C /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SidebarViewController.h; path = View/SidebarViewController.h; sourceTree = "<group>"; };
+		374484CF19023BF8008FD15C /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarViewController.m; path = View/SidebarViewController.m; sourceTree = "<group>"; };
+		379B122519025E5C00A336D7 /* RadiatonMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadiatonMapViewController.h; path = View/RadiatonMapViewController.h; sourceTree = "<group>"; };
+		379B122619025E5C00A336D7 /* RadiatonMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadiatonMapViewController.m; path = View/RadiatonMapViewController.m; sourceTree = "<group>"; };
+		379B122819025E9700A336D7 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = View/InfoViewController.h; sourceTree = "<group>"; };
+		379B122919025E9700A336D7 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoViewController.m; path = View/InfoViewController.m; sourceTree = "<group>"; };
+		379B122B19025EBF00A336D7 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatisticsViewController.h; path = View/StatisticsViewController.h; sourceTree = "<group>"; };
+		379B122C19025EBF00A336D7 /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatisticsViewController.m; path = View/StatisticsViewController.m; sourceTree = "<group>"; };
+		379B1234190268A000A336D7 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTabBarController.h; path = View/MyTabBarController.h; sourceTree = "<group>"; };
+		379B1235190268A000A336D7 /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTabBarController.m; path = View/MyTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,13 +130,11 @@
 		3744849119023332008FD15C /* TWRadiationApp */ = {
 			isa = PBXGroup;
 			children = (
+				374484C719023A49008FD15C /* Library */,
+				374484C31902354A008FD15C /* Controller */,
 				3744849A19023332008FD15C /* AppDelegate.h */,
 				3744849B19023332008FD15C /* AppDelegate.m */,
 				3744849D19023332008FD15C /* Main.storyboard */,
-				374484A019023332008FD15C /* FirstViewController.h */,
-				374484A119023332008FD15C /* FirstViewController.m */,
-				374484A319023332008FD15C /* SecondViewController.h */,
-				374484A419023332008FD15C /* SecondViewController.m */,
 				374484A619023332008FD15C /* Images.xcassets */,
 				3744849219023332008FD15C /* Supporting Files */,
 			);
@@ -155,6 +168,34 @@
 				374484B619023332008FD15C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		374484C31902354A008FD15C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				374484C41902358F008FD15C /* LauncherViewController.h */,
+				374484C51902358F008FD15C /* LauncherViewController.m */,
+				374484CE19023BF8008FD15C /* SidebarViewController.h */,
+				374484CF19023BF8008FD15C /* SidebarViewController.m */,
+				379B122519025E5C00A336D7 /* RadiatonMapViewController.h */,
+				379B122619025E5C00A336D7 /* RadiatonMapViewController.m */,
+				379B122819025E9700A336D7 /* InfoViewController.h */,
+				379B122919025E9700A336D7 /* InfoViewController.m */,
+				379B122B19025EBF00A336D7 /* StatisticsViewController.h */,
+				379B122C19025EBF00A336D7 /* StatisticsViewController.m */,
+				379B1234190268A000A336D7 /* MyTabBarController.h */,
+				379B1235190268A000A336D7 /* MyTabBarController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		374484C719023A49008FD15C /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				374484CB19023AED008FD15C /* SWRevealViewController.h */,
+				374484CC19023AED008FD15C /* SWRevealViewController.m */,
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,10 +295,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				374484A519023332008FD15C /* SecondViewController.m in Sources */,
+				374484D019023BF8008FD15C /* SidebarViewController.m in Sources */,
+				379B122719025E5C00A336D7 /* RadiatonMapViewController.m in Sources */,
+				379B1236190268A000A336D7 /* MyTabBarController.m in Sources */,
+				374484C61902358F008FD15C /* LauncherViewController.m in Sources */,
 				3744849C19023332008FD15C /* AppDelegate.m in Sources */,
-				374484A219023332008FD15C /* FirstViewController.m in Sources */,
 				3744849819023332008FD15C /* main.m in Sources */,
+				379B122A19025E9700A336D7 /* InfoViewController.m in Sources */,
+				374484CD19023AED008FD15C /* SWRevealViewController.m in Sources */,
+				379B122D19025EBF00A336D7 /* StatisticsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +508,7 @@
 				374484BF19023332008FD15C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		374484C019023332008FD15C /* Build configuration list for PBXNativeTarget "TWRadiationAppTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +517,7 @@
 				374484C219023332008FD15C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

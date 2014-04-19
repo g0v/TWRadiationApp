@@ -1,20 +1,26 @@
 //
-//  LauncherViewController.m
+//  StatisticsViewController.m
 //  TWRadiationApp
 //
 //  Created by Kent Huang on 2014/4/19.
 //  Copyright (c) 2014年 g0v.tw. All rights reserved.
 //
 
-#import "LauncherViewController.h"
+#import "StatisticsViewController.h"
 
-@interface LauncherViewController ()
+@interface StatisticsViewController ()
 
 @end
 
-@implementation LauncherViewController
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
+@implementation StatisticsViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
 }
 
 - (void)viewDidLoad

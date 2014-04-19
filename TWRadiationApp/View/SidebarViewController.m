@@ -7,12 +7,17 @@
 //
 
 #import "SidebarViewController.h"
+#import "SWRevealViewController.h"
 
 @interface SidebarViewController ()
 
 @end
 
 @implementation SidebarViewController
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,6 +37,12 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+    tableview.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+    tableview.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
+    
+    menuItems = @[@"title", @"login", @"upload"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,28 +55,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [menuItems count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NSString* CellIdentifier = [menuItems objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

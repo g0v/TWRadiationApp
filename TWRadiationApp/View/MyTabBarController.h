@@ -1,5 +1,5 @@
 //
-//  SidebarViewController.h
+//  MyTabBarController.h
 //  TWRadiationApp
 //
 //  Created by Kent Huang on 2014/4/19.
@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SidebarViewController : UITableViewController
+@interface MyTabBarController : UITabBarController <UITabBarControllerDelegate>
 {
-    NSArray *menuItems;
-    IBOutlet UITableView *tableview;
+    IBOutlet UIBarButtonItem* menuButton;
 }
 
 @end

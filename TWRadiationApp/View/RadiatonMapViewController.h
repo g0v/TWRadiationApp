@@ -1,5 +1,5 @@
 //
-//  SidebarViewController.h
+//  RadiatonMapViewController.h
 //  TWRadiationApp
 //
 //  Created by Kent Huang on 2014/4/19.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SidebarViewController : UITableViewController
-{
-    NSArray *menuItems;
-    IBOutlet UITableView *tableview;
-}
+@interface RadiatonMapViewController : UIViewController
 
 @end
