@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  SidebarViewController.h
 //  TWRadiationApp
 //
 //  Created by Kent Huang on 2014/4/19.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface SidebarViewController : UITableViewController
 
 @end

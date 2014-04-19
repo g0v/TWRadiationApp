@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  LauncherViewController.h
 //  TWRadiationApp
 //
 //  Created by Kent Huang on 2014/4/19.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface LauncherViewController : UIViewController
 
 @end
