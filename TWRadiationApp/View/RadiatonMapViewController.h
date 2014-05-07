@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface RadiatonMapViewController : UIViewController <CLLocationManagerDelegate>
+@interface RadiatonMapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 {
     CLLocationManager *locationManager;
     IBOutlet UILabel* currentAddress;
+    IBOutlet MKMapView *mapView;
 }
 
 - (IBAction)pushUpdateAddressButton:(id)sender;
