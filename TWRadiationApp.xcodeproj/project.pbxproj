@@ -47,6 +47,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		371B44B31923B327003C10C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 371B44AE1923B327003C10C9 /* TWRadiationCoreAPI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 375B38ED190EAC3300F0F573;
+			remoteInfo = TWRadiationCoreAPI;
+		};
+		371B44B51923B327003C10C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 371B44AE1923B327003C10C9 /* TWRadiationCoreAPI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 375B3900190EAC3300F0F573;
+			remoteInfo = TWRadiationCoreAPITests;
+		};
+		371B44B71923B369003C10C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 371B44AE1923B327003C10C9 /* TWRadiationCoreAPI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 375B38EC190EAC3300F0F573;
+			remoteInfo = TWRadiationCoreAPI;
+		};
 		374484B119023332008FD15C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3744848019023332008FD15C /* Project object */;
@@ -57,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		371B44AE1923B327003C10C9 /* TWRadiationCoreAPI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TWRadiationCoreAPI.xcodeproj; path = Core/TWRadiationCoreAPI.xcodeproj; sourceTree = "<group>"; };
 		3744848819023332008FD15C /* TWRadiationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWRadiationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3744848B19023332008FD15C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3744848D19023332008FD15C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,6 +169,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		371B44AF1923B327003C10C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				371B44B41923B327003C10C9 /* TWRadiationCoreAPI.framework */,
+				371B44B61923B327003C10C9 /* TWRadiationCoreAPITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3744847F19023332008FD15C = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +299,7 @@
 		379B123719026C2600A336D7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				371B44AE1923B327003C10C9 /* TWRadiationCoreAPI.xcodeproj */,
 				379B123A19026FE500A336D7 /* CoreAPIWrapper.h */,
 				379B123B19026FE500A336D7 /* CoreAPIWrapper.m */,
 			);
@@ -288,6 +320,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				371B44B81923B369003C10C9 /* PBXTargetDependency */,
 			);
 			name = TWRadiationApp;
 			productName = TWRadiationApp;
@@ -337,6 +370,12 @@
 			mainGroup = 3744847F19023332008FD15C;
 			productRefGroup = 3744848919023332008FD15C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 371B44AF1923B327003C10C9 /* Products */;
+					ProjectRef = 371B44AE1923B327003C10C9 /* TWRadiationCoreAPI.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3744848719023332008FD15C /* TWRadiationApp */,
@@ -344,6 +383,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		371B44B41923B327003C10C9 /* TWRadiationCoreAPI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework.static;
+			path = TWRadiationCoreAPI.framework;
+			remoteRef = 371B44B31923B327003C10C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		371B44B61923B327003C10C9 /* TWRadiationCoreAPITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TWRadiationCoreAPITests.xctest;
+			remoteRef = 371B44B51923B327003C10C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3744848619023332008FD15C /* Resources */ = {
@@ -396,6 +452,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		371B44B81923B369003C10C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TWRadiationCoreAPI;
+			targetProxy = 371B44B71923B369003C10C9 /* PBXContainerItemProxy */;
+		};
 		374484B219023332008FD15C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3744848719023332008FD15C /* TWRadiationApp */;
