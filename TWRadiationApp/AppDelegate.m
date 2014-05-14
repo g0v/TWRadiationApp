@@ -9,10 +9,14 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize coreApi = _coreApi;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    if (self.coreApi == nil) {
+        self.coreApi = [[TWRadiationCoreAPI alloc] init];
+    }
     return YES;
 }
 							
