@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		371B44C71923B57B003C10C9 /* TWRadiationCoreAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371B44C01923B449003C10C9 /* TWRadiationCoreAPI.framework */; };
 		3744848C19023332008FD15C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744848B19023332008FD15C /* Foundation.framework */; };
 		3744848E19023332008FD15C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744848D19023332008FD15C /* CoreGraphics.framework */; };
 		3744849019023332008FD15C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744848F19023332008FD15C /* UIKit.framework */; };
@@ -39,6 +38,7 @@
 		3760CF9C1906DB6B0028D91E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF9B1906DB6B0028D91E /* FacebookSDK.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3760CF9E1906DB980028D91E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF9D1906DB980028D91E /* libsqlite3.0.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3760CFA01906DBA60028D91E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF9F1906DBA60028D91E /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		378A9119192D0E2D00478D1F /* TWRadiationCoreAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 378A9117192D0E2D00478D1F /* TWRadiationCoreAPI.m */; };
 		379B122719025E5C00A336D7 /* RadiatonMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122619025E5C00A336D7 /* RadiatonMapViewController.m */; };
 		379B122A19025E9700A336D7 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122919025E9700A336D7 /* InfoViewController.m */; };
 		379B122D19025EBF00A336D7 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122C19025EBF00A336D7 /* StatisticsViewController.m */; };
@@ -47,27 +47,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		371B44BF1923B449003C10C9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 371B44BA1923B449003C10C9 /* TWRadiationCoreAPI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 375B38ED190EAC3300F0F573;
-			remoteInfo = TWRadiationCoreAPI;
-		};
-		371B44C11923B449003C10C9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 371B44BA1923B449003C10C9 /* TWRadiationCoreAPI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 375B3900190EAC3300F0F573;
-			remoteInfo = TWRadiationCoreAPITests;
-		};
-		371B44C31923B46D003C10C9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 371B44BA1923B449003C10C9 /* TWRadiationCoreAPI.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 375B38EC190EAC3300F0F573;
-			remoteInfo = TWRadiationCoreAPI;
-		};
 		374484B119023332008FD15C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3744848019023332008FD15C /* Project object */;
@@ -78,7 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		371B44BA1923B449003C10C9 /* TWRadiationCoreAPI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TWRadiationCoreAPI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		3744848819023332008FD15C /* TWRadiationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWRadiationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3744848B19023332008FD15C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3744848D19023332008FD15C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +95,8 @@
 		3760CF9B1906DB6B0028D91E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = TWRadiationApp/Library/FacebookSDK.framework; sourceTree = "<group>"; };
 		3760CF9D1906DB980028D91E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		3760CF9F1906DBA60028D91E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		378A9117192D0E2D00478D1F /* TWRadiationCoreAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWRadiationCoreAPI.m; path = Core/TWRadiationCoreAPI.m; sourceTree = "<group>"; };
+		378A9118192D0E2D00478D1F /* TWRadiationCoreAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TWRadiationCoreAPI.h; path = Core/TWRadiationCoreAPI.h; sourceTree = "<group>"; };
 		379B122519025E5C00A336D7 /* RadiatonMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadiatonMapViewController.h; path = View/RadiatonMapViewController.h; sourceTree = "<group>"; };
 		379B122619025E5C00A336D7 /* RadiatonMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadiatonMapViewController.m; path = View/RadiatonMapViewController.m; sourceTree = "<group>"; };
 		379B122819025E9700A336D7 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = View/InfoViewController.h; sourceTree = "<group>"; };
@@ -133,7 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				371B44C71923B57B003C10C9 /* TWRadiationCoreAPI.framework in Frameworks */,
 				3760CF9E1906DB980028D91E /* libsqlite3.0.dylib in Frameworks */,
 				3760CFA01906DBA60028D91E /* AdSupport.framework in Frameworks */,
 				3760CF9C1906DB6B0028D91E /* FacebookSDK.framework in Frameworks */,
@@ -168,15 +147,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		371B44BB1923B449003C10C9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				371B44C01923B449003C10C9 /* TWRadiationCoreAPI.framework */,
-				371B44C21923B449003C10C9 /* TWRadiationCoreAPITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3744847F19023332008FD15C = {
 			isa = PBXGroup;
 			children = (
@@ -298,7 +268,8 @@
 		379B123719026C2600A336D7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				371B44BA1923B449003C10C9 /* TWRadiationCoreAPI.xcodeproj */,
+				378A9117192D0E2D00478D1F /* TWRadiationCoreAPI.m */,
+				378A9118192D0E2D00478D1F /* TWRadiationCoreAPI.h */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -317,7 +288,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				371B44C41923B46D003C10C9 /* PBXTargetDependency */,
 			);
 			name = TWRadiationApp;
 			productName = TWRadiationApp;
@@ -367,12 +337,6 @@
 			mainGroup = 3744847F19023332008FD15C;
 			productRefGroup = 3744848919023332008FD15C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 371B44BB1923B449003C10C9 /* Products */;
-					ProjectRef = 371B44BA1923B449003C10C9 /* TWRadiationCoreAPI.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				3744848719023332008FD15C /* TWRadiationApp */,
@@ -380,23 +344,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		371B44C01923B449003C10C9 /* TWRadiationCoreAPI.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework.static;
-			path = TWRadiationCoreAPI.framework;
-			remoteRef = 371B44BF1923B449003C10C9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		371B44C21923B449003C10C9 /* TWRadiationCoreAPITests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = TWRadiationCoreAPITests.xctest;
-			remoteRef = 371B44C11923B449003C10C9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3744848619023332008FD15C /* Resources */ = {
@@ -427,6 +374,7 @@
 			files = (
 				374484D019023BF8008FD15C /* SidebarViewController.m in Sources */,
 				379B122719025E5C00A336D7 /* RadiatonMapViewController.m in Sources */,
+				378A9119192D0E2D00478D1F /* TWRadiationCoreAPI.m in Sources */,
 				379B1236190268A000A336D7 /* MyTabBarController.m in Sources */,
 				374484C61902358F008FD15C /* LauncherViewController.m in Sources */,
 				3744849C19023332008FD15C /* AppDelegate.m in Sources */,
@@ -448,11 +396,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		371B44C41923B46D003C10C9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TWRadiationCoreAPI;
-			targetProxy = 371B44C31923B46D003C10C9 /* PBXContainerItemProxy */;
-		};
 		374484B219023332008FD15C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3744848719023332008FD15C /* TWRadiationApp */;

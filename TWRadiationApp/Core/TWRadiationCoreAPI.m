@@ -20,9 +20,15 @@
     return self;
 }
 
+#pragma mark Api for User Account Information
 - (BOOL)isLogin
 {
     return isLogin;
+}
+
+- (BOOL)isActiveAccount
+{
+    return NO;
 }
 
 - (NSDictionary *)loginWithAccount:(NSString *)account passwd:(NSString *)passwd {
@@ -30,9 +36,23 @@
     return userInfo;
 }
 
-- (NSDictionary *)getLocationInfo
+- (BOOL)sendAccountInformationForRegist:(NSString *)account passwd:(NSString *)passwd deviceType:(NSString *)deviceType
+{
+    return NO;
+}
+
+- (NSDictionary *)getUsableDeviceList
 {
     return nil;
 }
 
+#pragma mark Api for Geography Information
+- (NSDictionary *)getLocationInfo
+{
+    return nil;
+}
+- (NSString *)getCurrentAddress
+{
+    return nil;
+}
 @end
