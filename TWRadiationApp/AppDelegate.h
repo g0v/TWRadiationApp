@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TWRadiationCoreApi/TWRadiationCoreAPI.h>
+#import "TWRadiationCoreAPI.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
