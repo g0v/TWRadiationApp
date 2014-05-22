@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A5CE766192DDC4A00608EBB /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CE764192DDC4A00608EBB /* Main_iPad.storyboard */; };
 		3744848C19023332008FD15C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744848B19023332008FD15C /* Foundation.framework */; };
 		3744848E19023332008FD15C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744848D19023332008FD15C /* CoreGraphics.framework */; };
 		3744849019023332008FD15C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744848F19023332008FD15C /* UIKit.framework */; };
 		3744849619023332008FD15C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3744849419023332008FD15C /* InfoPlist.strings */; };
 		3744849819023332008FD15C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3744849719023332008FD15C /* main.m */; };
 		3744849C19023332008FD15C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3744849B19023332008FD15C /* AppDelegate.m */; };
-		3744849F19023332008FD15C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3744849D19023332008FD15C /* Main.storyboard */; };
+		3744849F19023332008FD15C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3744849D19023332008FD15C /* Main_iPhone.storyboard */; };
 		374484A719023332008FD15C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374484A619023332008FD15C /* Images.xcassets */; };
 		374484AE19023332008FD15C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374484AD19023332008FD15C /* XCTest.framework */; };
 		374484AF19023332008FD15C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744848B19023332008FD15C /* Foundation.framework */; };
@@ -26,18 +27,8 @@
 		3760CF831906D90A0028D91E /* Ushahidi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3760CF811906D90A0028D91E /* Ushahidi.bundle */; };
 		3760CF841906D90A0028D91E /* Ushahidi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF821906D90A0028D91E /* Ushahidi.framework */; };
 		3760CF861906D9660028D91E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF851906D9660028D91E /* CoreFoundation.framework */; };
-		3760CF881906D9770028D91E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF871906D9770028D91E /* MobileCoreServices.framework */; };
 		3760CF8A1906D9810028D91E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF891906D9810028D91E /* MapKit.framework */; };
-		3760CF8C1906D98B0028D91E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF8B1906D98B0028D91E /* MessageUI.framework */; };
-		3760CF8E1906D9960028D91E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF8D1906D9960028D91E /* QuartzCore.framework */; };
-		3760CF901906D9A30028D91E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF8F1906D9A30028D91E /* Security.framework */; };
-		3760CF921906D9B50028D91E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF911906D9B50028D91E /* SystemConfiguration.framework */; };
-		3760CF941906D9DE0028D91E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF931906D9DE0028D91E /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		3760CF961906D9E70028D91E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF951906D9E70028D91E /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		3760CF981906D9F00028D91E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF971906D9F00028D91E /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		3760CF9C1906DB6B0028D91E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF9B1906DB6B0028D91E /* FacebookSDK.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3760CF9E1906DB980028D91E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF9D1906DB980028D91E /* libsqlite3.0.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
-		3760CFA01906DBA60028D91E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF9F1906DBA60028D91E /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		378A9119192D0E2D00478D1F /* TWRadiationCoreAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 378A9117192D0E2D00478D1F /* TWRadiationCoreAPI.m */; };
 		379B122719025E5C00A336D7 /* RadiatonMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122619025E5C00A336D7 /* RadiatonMapViewController.m */; };
 		379B122A19025E9700A336D7 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122919025E9700A336D7 /* InfoViewController.m */; };
@@ -57,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A5CE765192DDC4A00608EBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		3744848819023332008FD15C /* TWRadiationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWRadiationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3744848B19023332008FD15C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3744848D19023332008FD15C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -67,7 +59,7 @@
 		3744849919023332008FD15C /* TWRadiationApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TWRadiationApp-Prefix.pch"; sourceTree = "<group>"; };
 		3744849A19023332008FD15C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3744849B19023332008FD15C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3744849E19023332008FD15C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3744849E19023332008FD15C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		374484A619023332008FD15C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		374484AC19023332008FD15C /* TWRadiationAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TWRadiationAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		374484AD19023332008FD15C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -114,17 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3760CF9E1906DB980028D91E /* libsqlite3.0.dylib in Frameworks */,
-				3760CFA01906DBA60028D91E /* AdSupport.framework in Frameworks */,
-				3760CF9C1906DB6B0028D91E /* FacebookSDK.framework in Frameworks */,
-				3760CF981906D9F00028D91E /* Twitter.framework in Frameworks */,
-				3760CF961906D9E70028D91E /* Accounts.framework in Frameworks */,
-				3760CF941906D9DE0028D91E /* Social.framework in Frameworks */,
-				3760CF921906D9B50028D91E /* SystemConfiguration.framework in Frameworks */,
-				3760CF901906D9A30028D91E /* Security.framework in Frameworks */,
-				3760CF8E1906D9960028D91E /* QuartzCore.framework in Frameworks */,
-				3760CF8C1906D98B0028D91E /* MessageUI.framework in Frameworks */,
 				3760CF8A1906D9810028D91E /* MapKit.framework in Frameworks */,
-				3760CF881906D9770028D91E /* MobileCoreServices.framework in Frameworks */,
 				3760CF861906D9660028D91E /* CoreFoundation.framework in Frameworks */,
 				379B123919026D4E00A336D7 /* CoreLocation.framework in Frameworks */,
 				3744848E19023332008FD15C /* CoreGraphics.framework in Frameworks */,
@@ -196,12 +178,13 @@
 		3744849119023332008FD15C /* TWRadiationApp */ = {
 			isa = PBXGroup;
 			children = (
-				379B123719026C2600A336D7 /* Core */,
+				379B123719026C2600A336D7 /* CoreAPI */,
 				374484C719023A49008FD15C /* Library */,
 				374484C31902354A008FD15C /* Controller */,
 				3744849A19023332008FD15C /* AppDelegate.h */,
 				3744849B19023332008FD15C /* AppDelegate.m */,
-				3744849D19023332008FD15C /* Main.storyboard */,
+				3744849D19023332008FD15C /* Main_iPhone.storyboard */,
+				1A5CE764192DDC4A00608EBB /* Main_iPad.storyboard */,
 				374484A619023332008FD15C /* Images.xcassets */,
 				3744849219023332008FD15C /* Supporting Files */,
 			);
@@ -265,13 +248,13 @@
 			name = Library;
 			sourceTree = "<group>";
 		};
-		379B123719026C2600A336D7 /* Core */ = {
+		379B123719026C2600A336D7 /* CoreAPI */ = {
 			isa = PBXGroup;
 			children = (
 				378A9117192D0E2D00478D1F /* TWRadiationCoreAPI.m */,
 				378A9118192D0E2D00478D1F /* TWRadiationCoreAPI.h */,
 			);
-			name = Core;
+			name = CoreAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,10 +333,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5CE766192DDC4A00608EBB /* Main_iPad.storyboard in Resources */,
 				374484A719023332008FD15C /* Images.xcassets in Resources */,
 				3744849619023332008FD15C /* InfoPlist.strings in Resources */,
 				3760CF831906D90A0028D91E /* Ushahidi.bundle in Resources */,
-				3744849F19023332008FD15C /* Main.storyboard in Resources */,
+				3744849F19023332008FD15C /* Main_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +388,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1A5CE764192DDC4A00608EBB /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A5CE765192DDC4A00608EBB /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
 		3744849419023332008FD15C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -412,12 +404,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		3744849D19023332008FD15C /* Main.storyboard */ = {
+		3744849D19023332008FD15C /* Main_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3744849E19023332008FD15C /* Base */,
 			);
-			name = Main.storyboard;
+			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		374484B619023332008FD15C /* InfoPlist.strings */ = {
@@ -515,6 +507,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TWRadiationApp/TWRadiationApp-Prefix.pch";
 				INFOPLIST_FILE = "TWRadiationApp/TWRadiationApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -534,6 +527,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TWRadiationApp/TWRadiationApp-Prefix.pch";
 				INFOPLIST_FILE = "TWRadiationApp/TWRadiationApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
