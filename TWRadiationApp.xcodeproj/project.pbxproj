@@ -44,6 +44,7 @@
 		37F963A7193123DA008C7EA9 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F9639E193123DA008C7EA9 /* AFURLRequestSerialization.m */; };
 		37F963A8193123DA008C7EA9 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F9639F193123DA008C7EA9 /* AFHTTPRequestOperation.m */; };
 		37F963A9193123DA008C7EA9 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F963A0193123DA008C7EA9 /* AFURLSessionManager.m */; };
+		37F963AB1931FC3A008C7EA9 /* TWRadiationCoreApiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F963AA1931FC3A008C7EA9 /* TWRadiationCoreApiTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		37F9639E193123DA008C7EA9 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = Library/AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
 		37F9639F193123DA008C7EA9 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = Library/AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		37F963A0193123DA008C7EA9 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = Library/AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		37F963AA1931FC3A008C7EA9 /* TWRadiationCoreApiTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWRadiationCoreApiTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				374484B919023332008FD15C /* TWRadiationAppTests.m */,
+				37F963AA1931FC3A008C7EA9 /* TWRadiationCoreApiTests.m */,
 				374484B419023332008FD15C /* Supporting Files */,
 			);
 			path = TWRadiationAppTests;
@@ -437,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F963AB1931FC3A008C7EA9 /* TWRadiationCoreApiTests.m in Sources */,
 				374484BA19023332008FD15C /* TWRadiationAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
