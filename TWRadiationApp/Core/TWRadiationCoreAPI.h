@@ -7,9 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "AFNetworking.h"
 
-#define RADIATION_SERVER_REST_RUL   @""
+#define TASK_INVALID                @"invalid"
+#define TASK_INCIDENTS              @"incidents"
+#define TASK_SUBMIT                 @"report"
+#define TASK_CATEGORIES             @"categories"
+#define REST_API_CMD                @"?task="
+#define RADIATION_SERVER_REST_RUL   @"http://www.knownuke.tw/map/index.php/api"
 
 @interface TWRadiationCoreAPI : NSObject
 {
@@ -23,7 +29,11 @@
 - (NSDictionary *) loginWithAccount:(NSString*) account passwd:(NSString*) passwd;
 - (NSDictionary *) getUsableDeviceList;
 
-- (NSDictionary *) getLocationInfo;
+- (NSArray*) getLocationInfoList;
 - (NSString *) getCurrentAddress;
+
+
+- (NSString *) makeRestApiUrl:(NSString*)url task:(NSString*)action;
+- (id) getUshahidiRestApi:(NSString*)url task:(NSString *)action parameters:(NSArray *)params error:(NSError **)error;
 
 @end
