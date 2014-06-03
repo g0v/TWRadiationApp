@@ -76,7 +76,7 @@
 {
     NSArray *locationInfo = nil;
     locationInfo = [coreApi getLocationInfoList];
-    NSLog(@"%@",locationInfo);
+    NSLog(@"%d",[locationInfo count]);
     XCTAssert(locationInfo, @"");
 }
 
