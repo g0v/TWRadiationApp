@@ -50,6 +50,7 @@
     NSData              *respoundData = nil;
     
     if (requestUrl) {
+        requestUrl = [requestUrl stringByAppendingString:@"&limit=9999"];
         request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestUrl]];
         respoundData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:error];
         if (respoundData) {
