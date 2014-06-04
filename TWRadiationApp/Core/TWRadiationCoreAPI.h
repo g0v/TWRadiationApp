@@ -16,10 +16,17 @@
 #define TASK_CATEGORIES             @"categories"
 #define REST_API_CMD                @"?task="
 #define RADIATION_SERVER_REST_RUL   @"http://www.knownuke.tw/map/index.php/api"
+#define RADIATION_DEV_REST_RUL      @"http://u273.stark.tw/api"
+
+#define HIGHT_TYPE                  @"1"
+#define AREA_TYPE                   @"2"
+#define DEVICE_TYPE                 @"3"
+#define POSITION_TYPE               @"14"
 
 @interface TWRadiationCoreAPI : NSObject
 {
     BOOL isLogin;
+    NSDictionary *categoryTypeMapping;
 }
 
 - (BOOL) isLogin;
@@ -31,6 +38,8 @@
 
 - (NSArray*) getLocationInfoList;
 - (NSString *) getCurrentAddress;
+- (NSArray*) getCategorieList;
+- (NSArray*) getDeviceList;
 
 
 - (NSString *) makeRestApiUrl:(NSString*)url task:(NSString*)action;

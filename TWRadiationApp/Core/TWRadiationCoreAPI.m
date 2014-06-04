@@ -16,6 +16,12 @@
     if ((self = [super init])) {
         // TODO: Do something when init
         isLogin = NO;
+        categoryTypeMapping = @{@"6": HIGHT_TYPE,
+                                @"7": HIGHT_TYPE,
+                                @"8": AREA_TYPE,
+                                @"9": AREA_TYPE,
+                                @"15": POSITION_TYPE,
+                                @"16": POSITION_TYPE};
     }
     return self;
 }
@@ -103,7 +109,6 @@
 }
 
 #pragma mark Api for Geography Information
-
 - (id) getMediaFromUshahidiMediaObj:(id)mediaObj key:(NSString*)key
 {
     id result = [NSNull null];
@@ -126,13 +131,33 @@
         parsedList = [[NSMutableArray alloc] init];
         for (int i = 0; i < [incidentsList count]; i++) {
             id obj = [incidentsList objectAtIndex:i];
-            id objInc = [[incidentsList objectAtIndex:i] objectForKey:@"incident"];
+            id objInc = [obj objectForKey:@"incident"];
             NSMutableDictionary *locationInfo = [[NSMutableDictionary alloc] init];
             // Get location infromation
             [locationInfo setObject:[objInc objectForKey:@"locationname"] forKey:@"locationName"];
             [locationInfo setObject:[objInc objectForKey:@"locationlatitude"] forKey:@"locationLatitude"];
             [locationInfo setObject:[objInc objectForKey:@"locationlongitude"] forKey:@"locationLongitude"];
-            [locationInfo setObject:[objInc objectForKey:@"incidenttitle"] forKey:@"milliSieverts"];
+            [locationInfo setObject:[objInc objectForKey:@"incidenttitle"] forKey:@"microSievert"];
+            
+            // Get category information
+            for (id catObj in [obj objectForKey:@"categories"]) {
+                id catId = [[catObj objectForKey:@"category"] objectForKey:@"id"];
+                id catTitle = [[catObj objectForKey:@"category"] objectForKey:@"title"];
+                id catType = [categoryTypeMapping objectForKey:[catId stringValue]];
+                
+                if (catType == nil) {
+                    [locationInfo setObject:catTitle forKey:@"device"];
+                }
+                else if ([catType isEqualToString:HIGHT_TYPE]){
+                    [locationInfo setObject:catTitle forKey:@"height"];
+                }
+                else if ([catType isEqualToString:AREA_TYPE]){
+                    [locationInfo setObject:catTitle forKey:@"area"];
+                }
+                else if ([catType isEqualToString:POSITION_TYPE]){
+                    [locationInfo setObject:catTitle forKey:@"position"];
+                }
+            }
             
             // Get image
             [locationInfo setObject:[self getMediaFromUshahidiMediaObj:[obj objectForKey:@"media"] key:@"link_url"] forKey:@"imageUrl"];
@@ -144,10 +169,22 @@
     return parsedList;
 }
 
+- (NSArray*)parseUshahidiCateforiesFromJson:(id) jsonObj
+{
+    if (jsonObj &&
+        [jsonObj objectForKey:@"payload"] &&
+        [[jsonObj objectForKey:@"payload"] objectForKey:@"categories"]) {
+    }
+    return nil;
+}
+
 - (NSArray*)parseUshahidiJson:(NSString*) task jsonObj:(id) jsonObj
 {
     if ([task isEqualToString:TASK_INCIDENTS]) {
         return [self parseUshahidiIncidentsJson:jsonObj];
+    }
+    else if ([task isEqualToString:TASK_CATEGORIES]) {
+        return [self parseUshahidiCateforiesFromJson:jsonObj];
     }
     return nil;
 }
@@ -156,7 +193,7 @@
     NSError *error              = nil;
     NSArray *locationInfoList   = nil;
     id      jsonObj             = nil;
-    jsonObj = [self getUshahidiRestApi:RADIATION_SERVER_REST_RUL task:TASK_INCIDENTS parameters:nil error:&error];
+    jsonObj = [self getUshahidiRestApi:RADIATION_DEV_REST_RUL task:TASK_INCIDENTS parameters:nil error:&error];
     if (jsonObj == nil) {
         NSLog(@"%@",error.description);
     }
@@ -166,8 +203,25 @@
     return locationInfoList;
 }
 
+- (NSArray*) getCategorieList
+{
+    NSError *error;
+    NSArray *categorieList = nil;
+    id      jsonObj        = nil;
+    
+    jsonObj = [self getUshahidiRestApi:RADIATION_DEV_REST_RUL task:TASK_CATEGORIES parameters:nil error:&error];
+    if (jsonObj == nil) {
+        NSLog(@"%@",error.description);
+    }
+    else {
+        categorieList = [self parseUshahidiJson:TASK_CATEGORIES jsonObj:jsonObj];
+    }
+    return nil;
+}
+
 - (NSString *)getCurrentAddress
 {
     return nil;
 }
+
 @end
