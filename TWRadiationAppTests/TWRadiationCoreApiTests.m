@@ -76,7 +76,6 @@
 {
     NSArray *locationInfo = nil;
     locationInfo = [coreApi getLocationInfoList];
-    NSLog(@"%d",[locationInfo count]);
     XCTAssert(locationInfo, @"");
 }
 
@@ -85,4 +84,8 @@
     [coreApi getCurrentAddress];
 }
 
+- (void)testGetCategoriesList
+{
+    [coreApi getCategorieList];
+}
 @end
