@@ -6,7 +6,8 @@
 //  Copyright (c) 2014年 g0v.tw. All rights reserved.
 //
 
-#import "RadiatonMapViewController.h"
+#import "RadiationMapViewController.h"
+#import "TWRadiationConstant.h"
 
 @interface RadiatonMapViewController ()
 
@@ -18,20 +19,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    locationManager = [[CLLocationManager alloc] init];
+/*    locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [mapView setDelegate:self];
-    [mapView setShowsUserLocation:YES];
+    [mapView setShowsUserLocation:YES];*/
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:WEB_HOMEPAGE]]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [currentAddress setText:@""];
-    [locationManager startUpdatingLocation];
+//    [locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,7 +42,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-//TODO - need to rework it to use iOS APIs
+#pragma mark - UIWebViewDelegate methods
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    [loadingIndicator startAnimating];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [loadingIndicator stopAnimating];
+}
+
+/*
 - (void)askAddressByLocation:(CLLocation*) location {
     CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
     [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -113,8 +124,7 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
     [mapView setRegion:region animated:YES];
 }
-
-/*
+ 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
