@@ -36,18 +36,54 @@
     return restApiUrl;
 }
 
-/*
- AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
- AFHTTPRequestOperation *req = [manager GET:requestUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
- NSLog(@"JSON: %@", responseObject);
- } failure:^(AFHTTPRequestOperation *operation, NSError *error){
- NSLog(@"Error: %@", error);
- }];
- [req start];
- [req waitUntilFinished];
- */
+- (NSString*)generatePostRequestBodyFromParams: (NSDictionary*) params
+{
+    NSArray *allKeys = [params allKeys];
+    NSString *requestBody = @"";
+    for (id key in allKeys) {
+        if ([allKeys lastObject] == key) {
+            requestBody = [requestBody stringByAppendingFormat:@"%@=%@",key,[params objectForKey:key]];
+        }
+        else {
+            requestBody = [requestBody stringByAppendingFormat:@"%@=%@&",key,[params objectForKey:key]];
+        }
+    }
+    return requestBody;
+}
 
-- (id) getUshahidiRestApi:(NSString*)url task:(NSString *)action parameters:(NSArray *)params error:(NSError **)error
+- (id) postUshahidiRestApi:(NSString*)url task:(NSString *)action parameters:(NSDictionary *)params error:(NSError **)error
+{
+    NSObject            *jsonObj    = nil;
+    NSHTTPURLResponse   *response   = nil;
+    NSString            *requestUrl = [self makeRestApiUrl:url task:action];
+    NSMutableURLRequest *request    = nil;
+    NSData              *respoundData = nil;
+    
+    NSString            *requestBody = nil;
+    NSData              *requestBodyData = nil;
+    
+    if (requestUrl) {
+        requestBody = [self generatePostRequestBodyFromParams:params];
+        request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:requestUrl]];
+        [request setHTTPMethod:@"POST"];
+        requestBodyData = [NSData dataWithBytes: [requestBody UTF8String] length: [requestBody length ]];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+        [request setHTTPBody: requestBodyData];
+        respoundData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:error];
+        if (respoundData) {
+            jsonObj = [NSJSONSerialization JSONObjectWithData:respoundData options:NSJSONReadingMutableContainers error:error];
+        }
+        if (*error) {
+            jsonObj = nil;
+        }
+    }
+    else {
+        *error = [NSError errorWithDomain:@"Invalid API URL" code:NSURLErrorBadURL userInfo:nil];
+    }
+    return jsonObj;
+}
+
+- (id) getUshahidiRestApi:(NSString*)url task:(NSString *)action parameters:(NSDictionary *)params error:(NSError **)error
 {
     NSObject            *jsonObj    = nil;
     NSHTTPURLResponse   *response   = nil;
@@ -56,6 +92,9 @@
     NSData              *respoundData = nil;
     
     if (requestUrl) {
+        for (id key in [params allKeys]) {
+            NSLog(@"&%@=%@",key,[params objectForKey:key]);
+        }
         requestUrl = [requestUrl stringByAppendingString:@"&limit=9999"];
         request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestUrl]];
         respoundData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:error];
@@ -219,9 +258,40 @@
     return nil;
 }
 
+- (NSArray*)getDeviceList
+{
+    NSMutableArray *deviceList = [[NSMutableArray alloc] init];
+    
+    return deviceList;
+}
+
 - (NSString *)getCurrentAddress
 {
     return nil;
+}
+
+- (id)submitLocationInfoWithValue:(NSString *)microSievert locationName:(NSString *)locationName location:(CLLocation *)location hight:(NSString *)hight area:(NSString *)area device:(NSString *)device position:(NSString *)position photo:(NSData *)photo
+{
+    id jsonObj = nil;
+    NSError *error = nil;
+    NSString *latitude = [NSString stringWithFormat:@"%f",location.coordinate.latitude];
+    NSString *longitude = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
+    NSMutableDictionary *submitParameters = [[NSMutableDictionary alloc] init];
+    
+    [submitParameters setObject:@"report" forKey:@"task"];
+    [submitParameters setObject:microSievert forKey:@"incident_title"];
+    [submitParameters setObject:microSievert forKey:@"incident_description"];
+    [submitParameters setObject:@"01/01/2025" forKey:@"incident_date"];
+    [submitParameters setObject:@"7" forKey:@"incident_hour"];
+    [submitParameters setObject:@"7" forKey:@"incident_minute"];
+    [submitParameters setObject:@"am" forKey:@"incident_ampm"];
+    [submitParameters setObject:@"7,9,13,15" forKey:@"incident_category"];
+    [submitParameters setObject:latitude forKey:@"latitude"];
+    [submitParameters setObject:longitude forKey:@"longitude"];
+    [submitParameters setObject:locationName forKey:@"location_name"];
+    
+    jsonObj = [self postUshahidiRestApi:RADIATION_DEV_REST_RUL task:TASK_SUBMIT parameters:submitParameters error:&error];
+    return jsonObj;
 }
 
 @end

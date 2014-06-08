@@ -33,16 +33,24 @@
 - (BOOL) isActiveAccount;
 
 - (BOOL) sendAccountInformationForRegist:(NSString*) account passwd:(NSString*) passwd deviceType:(NSString*) deviceType;
-- (NSDictionary *) loginWithAccount:(NSString*) account passwd:(NSString*) passwd;
-- (NSDictionary *) getUsableDeviceList;
+- (NSDictionary*) loginWithAccount:(NSString*) account passwd:(NSString*) passwd;
+- (NSDictionary*) getUsableDeviceList;
 
 - (NSArray*) getLocationInfoList;
-- (NSString *) getCurrentAddress;
+- (NSString*) getCurrentAddress;
 - (NSArray*) getCategorieList;
 - (NSArray*) getDeviceList;
 
+- (id) submitLocationInfoWithValue:(NSString*) microSievert
+                        locationName:(NSString*) locationName
+                            location:(CLLocation*) location
+                               hight:(NSString*) hight
+                                area:(NSString*) area
+                              device:(NSString*) device
+                            position:(NSString*) position
+                               photo:(NSData*) photo;
 
 - (NSString *) makeRestApiUrl:(NSString*)url task:(NSString*)action;
-- (id) getUshahidiRestApi:(NSString*)url task:(NSString *)action parameters:(NSArray *)params error:(NSError **)error;
-
+- (id) getUshahidiRestApi:(NSString*)url task:(NSString *)action parameters:(NSDictionary*)params error:(NSError **)error;
+- (id) postUshahidiRestApi:(NSString*)url task:(NSString *)action parameters:(NSDictionary *)params error:(NSError **)error;
 @end
