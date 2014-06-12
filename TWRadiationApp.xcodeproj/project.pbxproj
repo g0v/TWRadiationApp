@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1A5CE766192DDC4A00608EBB /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CE764192DDC4A00608EBB /* Main_iPad.storyboard */; };
+		1AD4F9751947D5B900B9958F /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F9681947D5B900B9958F /* twitter.png */; };
+		1AD4F9761947D5B900B9958F /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F9691947D5B900B9958F /* statistics.png */; };
+		1AD4F9771947D5B900B9958F /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F96A1947D5B900B9958F /* share.png */; };
+		1AD4F9781947D5B900B9958F /* radiation.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F96B1947D5B900B9958F /* radiation.png */; };
+		1AD4F9791947D5B900B9958F /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F96C1947D5B900B9958F /* photo.png */; };
+		1AD4F97A1947D5B900B9958F /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F96D1947D5B900B9958F /* map.png */; };
+		1AD4F97B1947D5B900B9958F /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F96E1947D5B900B9958F /* location.png */; };
+		1AD4F97C1947D5B900B9958F /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F96F1947D5B900B9958F /* list.png */; };
+		1AD4F97D1947D5B900B9958F /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F9701947D5B900B9958F /* information.png */; };
+		1AD4F97E1947D5B900B9958F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F9711947D5B900B9958F /* home.png */; };
+		1AD4F97F1947D5B900B9958F /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F9721947D5B900B9958F /* facebook.png */; };
+		1AD4F9801947D5B900B9958F /* del.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F9731947D5B900B9958F /* del.png */; };
+		1AD4F9811947D5B900B9958F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F9741947D5B900B9958F /* add.png */; };
+		1AD4F9841947DF8700B9958F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4F9831947DF8700B9958F /* LoginViewController.m */; };
 		3744848C19023332008FD15C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744848B19023332008FD15C /* Foundation.framework */; };
 		3744848E19023332008FD15C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744848D19023332008FD15C /* CoreGraphics.framework */; };
 		3744849019023332008FD15C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744848F19023332008FD15C /* UIKit.framework */; };
@@ -60,6 +74,21 @@
 /* Begin PBXFileReference section */
 		1A0E3AA6193FFC9F00BA5287 /* TWRadiationConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWRadiationConstant.h; sourceTree = "<group>"; };
 		1A5CE765192DDC4A00608EBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		1AD4F9681947D5B900B9958F /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = Resources/twitter.png; sourceTree = "<group>"; };
+		1AD4F9691947D5B900B9958F /* statistics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statistics.png; path = Resources/statistics.png; sourceTree = "<group>"; };
+		1AD4F96A1947D5B900B9958F /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = share.png; path = Resources/share.png; sourceTree = "<group>"; };
+		1AD4F96B1947D5B900B9958F /* radiation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = radiation.png; path = Resources/radiation.png; sourceTree = "<group>"; };
+		1AD4F96C1947D5B900B9958F /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photo.png; path = Resources/photo.png; sourceTree = "<group>"; };
+		1AD4F96D1947D5B900B9958F /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = Resources/map.png; sourceTree = "<group>"; };
+		1AD4F96E1947D5B900B9958F /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location.png; path = Resources/location.png; sourceTree = "<group>"; };
+		1AD4F96F1947D5B900B9958F /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = Resources/list.png; sourceTree = "<group>"; };
+		1AD4F9701947D5B900B9958F /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = information.png; path = Resources/information.png; sourceTree = "<group>"; };
+		1AD4F9711947D5B900B9958F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = Resources/home.png; sourceTree = "<group>"; };
+		1AD4F9721947D5B900B9958F /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook.png; path = Resources/facebook.png; sourceTree = "<group>"; };
+		1AD4F9731947D5B900B9958F /* del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = del.png; path = Resources/del.png; sourceTree = "<group>"; };
+		1AD4F9741947D5B900B9958F /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Resources/add.png; sourceTree = "<group>"; };
+		1AD4F9821947DF8700B9958F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = View/LoginViewController.h; sourceTree = "<group>"; };
+		1AD4F9831947DF8700B9958F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = View/LoginViewController.m; sourceTree = "<group>"; };
 		3744848819023332008FD15C /* TWRadiationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWRadiationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3744848B19023332008FD15C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3744848D19023332008FD15C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -160,6 +189,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AD4F9671947D59700B9958F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1AD4F9681947D5B900B9958F /* twitter.png */,
+				1AD4F9691947D5B900B9958F /* statistics.png */,
+				1AD4F96A1947D5B900B9958F /* share.png */,
+				1AD4F96B1947D5B900B9958F /* radiation.png */,
+				1AD4F96C1947D5B900B9958F /* photo.png */,
+				1AD4F96D1947D5B900B9958F /* map.png */,
+				1AD4F96E1947D5B900B9958F /* location.png */,
+				1AD4F96F1947D5B900B9958F /* list.png */,
+				1AD4F9701947D5B900B9958F /* information.png */,
+				1AD4F9711947D5B900B9958F /* home.png */,
+				1AD4F9721947D5B900B9958F /* facebook.png */,
+				1AD4F9731947D5B900B9958F /* del.png */,
+				1AD4F9741947D5B900B9958F /* add.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		3744847F19023332008FD15C = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +267,7 @@
 				1A5CE764192DDC4A00608EBB /* Main_iPad.storyboard */,
 				1A0E3AA6193FFC9F00BA5287 /* TWRadiationConstant.h */,
 				374484A619023332008FD15C /* Images.xcassets */,
+				1AD4F9671947D59700B9958F /* Resources */,
 				3744849219023332008FD15C /* Supporting Files */,
 			);
 			path = TWRadiationApp;
@@ -264,6 +314,8 @@
 				379B122619025E5C00A336D7 /* RadiationMapViewController.m */,
 				379B122819025E9700A336D7 /* InfoViewController.h */,
 				379B122919025E9700A336D7 /* InfoViewController.m */,
+				1AD4F9821947DF8700B9958F /* LoginViewController.h */,
+				1AD4F9831947DF8700B9958F /* LoginViewController.m */,
 				379B122B19025EBF00A336D7 /* StatisticsViewController.h */,
 				379B122C19025EBF00A336D7 /* StatisticsViewController.m */,
 				379B1234190268A000A336D7 /* MyTabBarController.h */,
@@ -395,9 +447,22 @@
 			files = (
 				1A5CE766192DDC4A00608EBB /* Main_iPad.storyboard in Resources */,
 				374484A719023332008FD15C /* Images.xcassets in Resources */,
+				1AD4F9791947D5B900B9958F /* photo.png in Resources */,
 				3744849619023332008FD15C /* InfoPlist.strings in Resources */,
+				1AD4F97C1947D5B900B9958F /* list.png in Resources */,
+				1AD4F97B1947D5B900B9958F /* location.png in Resources */,
+				1AD4F9751947D5B900B9958F /* twitter.png in Resources */,
+				1AD4F97A1947D5B900B9958F /* map.png in Resources */,
+				1AD4F9801947D5B900B9958F /* del.png in Resources */,
+				1AD4F9811947D5B900B9958F /* add.png in Resources */,
+				1AD4F9761947D5B900B9958F /* statistics.png in Resources */,
+				1AD4F97F1947D5B900B9958F /* facebook.png in Resources */,
 				3760CF831906D90A0028D91E /* Ushahidi.bundle in Resources */,
+				1AD4F97D1947D5B900B9958F /* information.png in Resources */,
+				1AD4F97E1947D5B900B9958F /* home.png in Resources */,
+				1AD4F9781947D5B900B9958F /* radiation.png in Resources */,
 				3744849F19023332008FD15C /* Main_iPhone.storyboard in Resources */,
+				1AD4F9771947D5B900B9958F /* share.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +485,7 @@
 				374484D019023BF8008FD15C /* SidebarViewController.m in Sources */,
 				379B122719025E5C00A336D7 /* RadiationMapViewController.m in Sources */,
 				378A9119192D0E2D00478D1F /* TWRadiationCoreAPI.m in Sources */,
+				1AD4F9841947DF8700B9958F /* LoginViewController.m in Sources */,
 				379B1236190268A000A336D7 /* MyTabBarController.m in Sources */,
 				37F963A5193123DA008C7EA9 /* AFURLResponseSerialization.m in Sources */,
 				37F963A4193123DA008C7EA9 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -525,7 +591,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -557,7 +623,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
