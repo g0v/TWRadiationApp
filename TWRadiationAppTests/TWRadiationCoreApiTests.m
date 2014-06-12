@@ -88,4 +88,16 @@
 {
     [coreApi getCategorieList];
 }
+
+- (void)testSubmitLocationInfo
+{
+    CLLocation *testLoction = [[CLLocation alloc] initWithLatitude:25.03861 longitude:121.92417];
+    id jsonObj = nil;
+    jsonObj = [coreApi submitLocationInfoWithValue:@"0.01" locationName:@"g0v" location:testLoction hight:@"一公尺" area:@"於室外" device:@"儀器D" position:@"一般人士" photo:nil];
+    XCTAssert(jsonObj, @"");
+    XCTAssert([jsonObj objectForKey:@"error"], @"");
+    XCTAssert([[jsonObj objectForKey:@"error"] objectForKey:@"code"], @"");
+    XCTAssertEqualObjects([[jsonObj objectForKey:@"error"] objectForKey:@"code"], @"0", @"");
+    
+}
 @end
