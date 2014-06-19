@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A5CE766192DDC4A00608EBB /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CE764192DDC4A00608EBB /* Main_iPad.storyboard */; };
+		1AB5721A1951276700398E27 /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB572191951276700398E27 /* UploadViewController.m */; };
 		1AD4F9751947D5B900B9958F /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F9681947D5B900B9958F /* twitter.png */; };
 		1AD4F9761947D5B900B9958F /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F9691947D5B900B9958F /* statistics.png */; };
 		1AD4F9771947D5B900B9958F /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F96A1947D5B900B9958F /* share.png */; };
@@ -44,7 +45,7 @@
 		3760CF8A1906D9810028D91E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF891906D9810028D91E /* MapKit.framework */; };
 		3760CF9E1906DB980028D91E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF9D1906DB980028D91E /* libsqlite3.0.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
 		378A9119192D0E2D00478D1F /* TWRadiationCoreAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 378A9117192D0E2D00478D1F /* TWRadiationCoreAPI.m */; };
-		379B122719025E5C00A336D7 /* RadiationMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122619025E5C00A336D7 /* RadiationMapViewController.m */; };
+		379B122719025E5C00A336D7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122619025E5C00A336D7 /* MapViewController.m */; };
 		379B122A19025E9700A336D7 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122919025E9700A336D7 /* InfoViewController.m */; };
 		379B122D19025EBF00A336D7 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122C19025EBF00A336D7 /* StatisticsViewController.m */; };
 		379B1236190268A000A336D7 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B1235190268A000A336D7 /* MyTabBarController.m */; };
@@ -74,6 +75,8 @@
 /* Begin PBXFileReference section */
 		1A0E3AA6193FFC9F00BA5287 /* TWRadiationConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWRadiationConstant.h; sourceTree = "<group>"; };
 		1A5CE765192DDC4A00608EBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		1AB572181951276700398E27 /* UploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UploadViewController.h; path = View/UploadViewController.h; sourceTree = "<group>"; };
+		1AB572191951276700398E27 /* UploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UploadViewController.m; path = View/UploadViewController.m; sourceTree = "<group>"; };
 		1AD4F9681947D5B900B9958F /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = Resources/twitter.png; sourceTree = "<group>"; };
 		1AD4F9691947D5B900B9958F /* statistics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statistics.png; path = Resources/statistics.png; sourceTree = "<group>"; };
 		1AD4F96A1947D5B900B9958F /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = share.png; path = Resources/share.png; sourceTree = "<group>"; };
@@ -129,8 +132,8 @@
 		3760CF9F1906DBA60028D91E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		378A9117192D0E2D00478D1F /* TWRadiationCoreAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWRadiationCoreAPI.m; path = Core/TWRadiationCoreAPI.m; sourceTree = "<group>"; };
 		378A9118192D0E2D00478D1F /* TWRadiationCoreAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TWRadiationCoreAPI.h; path = Core/TWRadiationCoreAPI.h; sourceTree = "<group>"; };
-		379B122519025E5C00A336D7 /* RadiationMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadiationMapViewController.h; path = View/RadiationMapViewController.h; sourceTree = "<group>"; };
-		379B122619025E5C00A336D7 /* RadiationMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadiationMapViewController.m; path = View/RadiationMapViewController.m; sourceTree = "<group>"; };
+		379B122519025E5C00A336D7 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = View/MapViewController.h; sourceTree = "<group>"; };
+		379B122619025E5C00A336D7 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = View/MapViewController.m; sourceTree = "<group>"; };
 		379B122819025E9700A336D7 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = View/InfoViewController.h; sourceTree = "<group>"; };
 		379B122919025E9700A336D7 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoViewController.m; path = View/InfoViewController.m; sourceTree = "<group>"; };
 		379B122B19025EBF00A336D7 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatisticsViewController.h; path = View/StatisticsViewController.h; sourceTree = "<group>"; };
@@ -310,12 +313,14 @@
 				374484C51902358F008FD15C /* LauncherViewController.m */,
 				374484CE19023BF8008FD15C /* SidebarViewController.h */,
 				374484CF19023BF8008FD15C /* SidebarViewController.m */,
-				379B122519025E5C00A336D7 /* RadiationMapViewController.h */,
-				379B122619025E5C00A336D7 /* RadiationMapViewController.m */,
+				379B122519025E5C00A336D7 /* MapViewController.h */,
+				379B122619025E5C00A336D7 /* MapViewController.m */,
 				379B122819025E9700A336D7 /* InfoViewController.h */,
 				379B122919025E9700A336D7 /* InfoViewController.m */,
 				1AD4F9821947DF8700B9958F /* LoginViewController.h */,
 				1AD4F9831947DF8700B9958F /* LoginViewController.m */,
+				1AB572181951276700398E27 /* UploadViewController.h */,
+				1AB572191951276700398E27 /* UploadViewController.m */,
 				379B122B19025EBF00A336D7 /* StatisticsViewController.h */,
 				379B122C19025EBF00A336D7 /* StatisticsViewController.m */,
 				379B1234190268A000A336D7 /* MyTabBarController.h */,
@@ -481,9 +486,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB5721A1951276700398E27 /* UploadViewController.m in Sources */,
 				37F963A8193123DA008C7EA9 /* AFHTTPRequestOperation.m in Sources */,
 				374484D019023BF8008FD15C /* SidebarViewController.m in Sources */,
-				379B122719025E5C00A336D7 /* RadiationMapViewController.m in Sources */,
+				379B122719025E5C00A336D7 /* MapViewController.m in Sources */,
 				378A9119192D0E2D00478D1F /* TWRadiationCoreAPI.m in Sources */,
 				1AD4F9841947DF8700B9958F /* LoginViewController.m in Sources */,
 				379B1236190268A000A336D7 /* MyTabBarController.m in Sources */,
