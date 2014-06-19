@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 g0v.tw. All rights reserved.
 //
 
-#import "RadiationMapViewController.h"
+#import "MapViewController.h"
 #import "TWRadiationConstant.h"
 
 @interface RadiatonMapViewController ()
