@@ -44,6 +44,7 @@
 		3760CF861906D9660028D91E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF851906D9660028D91E /* CoreFoundation.framework */; };
 		3760CF8A1906D9810028D91E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF891906D9810028D91E /* MapKit.framework */; };
 		3760CF9E1906DB980028D91E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF9D1906DB980028D91E /* libsqlite3.0.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
+		37888E801955697D009FD5A1 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 37888E7F1955697D009FD5A1 /* Device.m */; };
 		378A9119192D0E2D00478D1F /* TWRadiationCoreAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 378A9117192D0E2D00478D1F /* TWRadiationCoreAPI.m */; };
 		379B122719025E5C00A336D7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122619025E5C00A336D7 /* MapViewController.m */; };
 		379B122A19025E9700A336D7 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122919025E9700A336D7 /* InfoViewController.m */; };
@@ -130,6 +131,8 @@
 		3760CF9B1906DB6B0028D91E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = TWRadiationApp/Library/FacebookSDK.framework; sourceTree = "<group>"; };
 		3760CF9D1906DB980028D91E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		3760CF9F1906DBA60028D91E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		37888E7E1955697D009FD5A1 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Device.h; path = Core/Device.h; sourceTree = "<group>"; };
+		37888E7F1955697D009FD5A1 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Device.m; path = Core/Device.m; sourceTree = "<group>"; };
 		378A9117192D0E2D00478D1F /* TWRadiationCoreAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWRadiationCoreAPI.m; path = Core/TWRadiationCoreAPI.m; sourceTree = "<group>"; };
 		378A9118192D0E2D00478D1F /* TWRadiationCoreAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TWRadiationCoreAPI.h; path = Core/TWRadiationCoreAPI.h; sourceTree = "<group>"; };
 		379B122519025E5C00A336D7 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = View/MapViewController.h; sourceTree = "<group>"; };
@@ -344,6 +347,8 @@
 			children = (
 				378A9117192D0E2D00478D1F /* TWRadiationCoreAPI.m */,
 				378A9118192D0E2D00478D1F /* TWRadiationCoreAPI.h */,
+				37888E7E1955697D009FD5A1 /* Device.h */,
+				37888E7F1955697D009FD5A1 /* Device.m */,
 			);
 			name = CoreAPI;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 				378A9119192D0E2D00478D1F /* TWRadiationCoreAPI.m in Sources */,
 				1AD4F9841947DF8700B9958F /* LoginViewController.m in Sources */,
 				379B1236190268A000A336D7 /* MyTabBarController.m in Sources */,
+				37888E801955697D009FD5A1 /* Device.m in Sources */,
 				37F963A5193123DA008C7EA9 /* AFURLResponseSerialization.m in Sources */,
 				37F963A4193123DA008C7EA9 /* AFHTTPRequestOperationManager.m in Sources */,
 				37F963A6193123DA008C7EA9 /* AFNetworkReachabilityManager.m in Sources */,

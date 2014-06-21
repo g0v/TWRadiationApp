@@ -89,11 +89,26 @@
     [coreApi getCategorieList];
 }
 
+- (void)testGetDeviceList
+{
+    id deviceList = [coreApi getDeviceList];
+    XCTAssert(deviceList, @"");
+    for (Device *device in deviceList) {
+        NSLog(@"[Device] Id:%@, Name:%@",device.deviceId, device.deviceName);
+    }
+}
+
+- (void)testGetCurrentTime
+{
+    id currentTime = [coreApi getCurrentTime];
+    NSLog(@"%@",currentTime);
+}
+
 - (void)testSubmitLocationInfo
 {
     CLLocation *testLoction = [[CLLocation alloc] initWithLatitude:25.03861 longitude:121.92417];
     id jsonObj = nil;
-    jsonObj = [coreApi submitLocationInfoWithValue:@"0.01" locationName:@"g0v" location:testLoction hight:@"一公尺" area:@"於室外" device:@"儀器D" position:@"一般人士" photo:nil];
+    jsonObj = [coreApi submitLocationInfoWithValue:@"0.01" locationName:@"g0v" location:testLoction high:meter area:outdoor device:[[Device alloc] initWithId:@"13" name:@"儀器D"] position:people photo:nil];
     XCTAssert(jsonObj, @"");
     XCTAssert([jsonObj objectForKey:@"error"], @"");
     XCTAssert([[jsonObj objectForKey:@"error"] objectForKey:@"code"], @"");

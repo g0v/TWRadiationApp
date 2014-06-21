@@ -213,6 +213,7 @@
     if (jsonObj &&
         [jsonObj objectForKey:@"payload"] &&
         [[jsonObj objectForKey:@"payload"] objectForKey:@"categories"]) {
+        return [[jsonObj objectForKey:@"payload"] objectForKey:@"categories"];
     }
     return nil;
 }
@@ -255,13 +256,23 @@
     else {
         categorieList = [self parseUshahidiJson:TASK_CATEGORIES jsonObj:jsonObj];
     }
-    return nil;
+    return categorieList;
 }
 
-- (NSArray*)getDeviceList
+- (NSArray *)getDeviceList
 {
-    NSMutableArray *deviceList = [[NSMutableArray alloc] init];
+    NSArray*        categorieList = [self getCategorieList];
+    NSMutableArray* deviceList = [[NSMutableArray alloc] init];
     
+    if (categorieList != nil) {
+        for (id obj in categorieList) {
+            if ([[[obj objectForKey:@"category"] objectForKey:@"parent_id"] isEqualToString:DEVICE_TYPE]) {
+                Device *device = [[Device alloc] initWithId:[[obj objectForKey:@"category"] objectForKey:@"id"]
+                                                       name:[[obj objectForKey:@"category"] objectForKey:@"title"]];
+                [deviceList addObject:device];
+            }
+        }
+    }
     return deviceList;
 }
 
@@ -270,22 +281,73 @@
     return nil;
 }
 
-- (id)submitLocationInfoWithValue:(NSString *)microSievert locationName:(NSString *)locationName location:(CLLocation *)location hight:(NSString *)hight area:(NSString *)area device:(NSString *)device position:(NSString *)position photo:(NSData *)photo
+- (NSDictionary*) getCurrentTime
 {
-    id jsonObj = nil;
-    NSError *error = nil;
-    NSString *latitude = [NSString stringWithFormat:@"%f",location.coordinate.latitude];
-    NSString *longitude = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
-    NSMutableDictionary *submitParameters = [[NSMutableDictionary alloc] init];
+    NSDate*             dateNow;
+    NSString*           date;
+    NSString*           hour;
+    NSString*           minute;
+    NSString*           second;
+    NSString*           ampm;
+    NSDateFormatter*    dateFormater;
+    
+    dateNow = [NSDate date];
+    dateFormater = [[NSDateFormatter alloc] init];
+    // Get Date
+    [dateFormater setDateFormat:@"MM/dd/YYYY"];
+    date = [dateFormater stringFromDate:dateNow];
+    
+    // Get hour
+    [dateFormater setDateFormat:@"KK"];
+    hour = [dateFormater stringFromDate:dateNow];
+    
+    // Get minute
+    [dateFormater setDateFormat:@"mm"];
+    minute = [dateFormater stringFromDate:dateNow];
+    
+    // Get second
+    [dateFormater setDateFormat:@"ss"];
+    second = [dateFormater stringFromDate:dateNow];
+    
+    // Get ampm
+    [dateFormater setDateFormat:@"aa"];
+    ampm = [dateFormater stringFromDate:dateNow];
+    
+    return @{@"date":date,
+             @"hour":hour,
+             @"minute":minute,
+             @"second":second,
+             @"ampm":[ampm lowercaseString]};
+}
+
+- (id)submitLocationInfoWithValue:(NSString *)microSievert locationName:(NSString *)locationName location:(CLLocation *)location high:(HighType)high area:(AreaType)area device:(Device *)device position:(PositionType)position photo:(NSData *)photo
+{
+    id          jsonObj = nil;
+    NSError*    error = nil;
+    NSString*   latitude = nil;
+    NSString*   longitude = nil;
+    NSString*   category = nil;
+    NSDictionary*           currentTime = [self getCurrentTime];
+    NSMutableDictionary*    submitParameters;
+    
+    if (device == nil) {
+        return nil;
+    }
+    
+    category = [NSString stringWithFormat:@"%d,%d,%@,%d",high,area,device.deviceId,position];
+    
+    latitude = [NSString stringWithFormat:@"%f",location.coordinate.latitude];
+    longitude = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
+    submitParameters = [[NSMutableDictionary alloc] init];
     
     [submitParameters setObject:@"report" forKey:@"task"];
     [submitParameters setObject:microSievert forKey:@"incident_title"];
     [submitParameters setObject:microSievert forKey:@"incident_description"];
-    [submitParameters setObject:@"01/01/2025" forKey:@"incident_date"];
-    [submitParameters setObject:@"7" forKey:@"incident_hour"];
-    [submitParameters setObject:@"7" forKey:@"incident_minute"];
-    [submitParameters setObject:@"am" forKey:@"incident_ampm"];
-    [submitParameters setObject:@"7,9,13,15" forKey:@"incident_category"];
+    [submitParameters setObject:[currentTime objectForKey:@"date"] forKey:@"incident_date"];
+    [submitParameters setObject:[currentTime objectForKey:@"hour"] forKey:@"incident_hour"];
+    [submitParameters setObject:[currentTime objectForKey:@"minute"] forKey:@"incident_minute"];
+    [submitParameters setObject:[currentTime objectForKey:@"ampm"] forKey:@"incident_ampm"];
+    [submitParameters setObject:category forKey:@"incident_category"];
     [submitParameters setObject:latitude forKey:@"latitude"];
     [submitParameters setObject:longitude forKey:@"longitude"];
     [submitParameters setObject:locationName forKey:@"location_name"];

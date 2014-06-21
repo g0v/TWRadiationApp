@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import "AFNetworking.h"
+#import "Device.h"
 
 #define TASK_INVALID                @"invalid"
 #define TASK_INCIDENTS              @"incidents"
@@ -22,6 +23,21 @@
 #define AREA_TYPE                   @"2"
 #define DEVICE_TYPE                 @"3"
 #define POSITION_TYPE               @"14"
+
+typedef enum {
+    ground = 6,
+    meter = 7
+} HighType;
+
+typedef enum {
+    indoor = 8,
+    outdoor = 9
+} AreaType;
+
+typedef enum {
+    people = 16,
+    expert = 15
+} PositionType;
 
 @interface TWRadiationCoreAPI : NSObject
 {
@@ -40,14 +56,15 @@
 - (NSString*) getCurrentAddress;
 - (NSArray*) getCategorieList;
 - (NSArray*) getDeviceList;
+- (NSDictionary*) getCurrentTime;
 
 - (id) submitLocationInfoWithValue:(NSString*) microSievert
                         locationName:(NSString*) locationName
                             location:(CLLocation*) location
-                               hight:(NSString*) hight
-                                area:(NSString*) area
-                              device:(NSString*) device
-                            position:(NSString*) position
+                                high:(HighType) high
+                                area:(AreaType) area
+                              device:(Device*) device
+                            position:(PositionType) position
                                photo:(NSData*) photo;
 
 - (NSString *) makeRestApiUrl:(NSString*)url task:(NSString*)action;
