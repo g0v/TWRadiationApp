@@ -28,6 +28,10 @@
 	<string>Main_iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>Main_iPad</string>
+	<key>FacebookAppID</key>
+	<string>1390714067860475</string>
+	<key>FacebookDisplayName</key>
+	<string>${PRODUCT_NAME}</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

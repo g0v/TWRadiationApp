@@ -9,7 +9,7 @@
 #import "UploadViewController.h"
 
 @interface UploadViewController ()
-@property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;
+@property (nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @end
 
 @implementation UploadViewController
@@ -36,4 +36,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)takePhoto:(id)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+    picker.showsCameraControls = YES;
+    
+    [self presentViewController:picker animated:YES completion:^ {
+        [picker takePicture];
+    }];
+}
 @end

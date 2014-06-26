@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UploadViewController : UIViewController
+@interface UploadViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @end
