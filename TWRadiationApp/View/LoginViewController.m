@@ -46,6 +46,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    if (coreApi == nil) {
+        AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+        coreApi = [appDelegate coreApi];
+    }
+    
     [self.revealButtonItem setAction: @selector( revealToggle: )];
 }
 
@@ -126,4 +131,34 @@
                           otherButtonTitles:nil] show];
     }
 }
+
+#pragma mark - UITextField Delegate
+// Hidden the keyboard after user push return button
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma makr - check user login 
+- (void)pushLoginButton:(id)sender
+{
+    if ([coreApi isLogin] == YES) {
+        NSLog(@"Already login~");
+    }
+    else {
+        NSDictionary *userInfo = [coreApi loginWithAccount:userAccount.text passwd:userPasswd.text];
+        if (userInfo) {
+            NSLog(@"Login with user: %@",userAccount.text);
+        }
+        else {
+            NSLog(@"Login fail!");
+        }
+    }
+}
+
+- (void)revealToggle:(id)sender
+{
+}
+
 @end

@@ -349,8 +349,8 @@
 		379B123719026C2600A336D7 /* CoreAPI */ = {
 			isa = PBXGroup;
 			children = (
-				378A9117192D0E2D00478D1F /* TWRadiationCoreAPI.m */,
 				378A9118192D0E2D00478D1F /* TWRadiationCoreAPI.h */,
+				378A9117192D0E2D00478D1F /* TWRadiationCoreAPI.m */,
 				37888E7E1955697D009FD5A1 /* Device.h */,
 				37888E7F1955697D009FD5A1 /* Device.m */,
 			);
