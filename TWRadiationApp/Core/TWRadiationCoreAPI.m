@@ -145,6 +145,11 @@
     return userInfo;
 }
 
+- (void)logout
+{
+    isLogin = NO;
+}
+
 - (BOOL)sendAccountInformationForRegist:(NSString *)account passwd:(NSString *)passwd deviceType:(NSString *)deviceType
 {
     return NO;

@@ -41,6 +41,7 @@
 		374484C61902358F008FD15C /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374484C51902358F008FD15C /* LauncherViewController.m */; };
 		374484CD19023AED008FD15C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374484CC19023AED008FD15C /* SWRevealViewController.m */; };
 		374484D019023BF8008FD15C /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374484CF19023BF8008FD15C /* SidebarViewController.m */; };
+		375E7093197FBD6F003E732A /* DetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375E7092197FBD6F003E732A /* DetailInfoViewController.m */; };
 		3760CF831906D90A0028D91E /* Ushahidi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3760CF811906D90A0028D91E /* Ushahidi.bundle */; };
 		3760CF841906D90A0028D91E /* Ushahidi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF821906D90A0028D91E /* Ushahidi.framework */; };
 		3760CF861906D9660028D91E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF851906D9660028D91E /* CoreFoundation.framework */; };
@@ -119,6 +120,8 @@
 		374484CC19023AED008FD15C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = Library/SWRevealViewController.m; sourceTree = "<group>"; };
 		374484CE19023BF8008FD15C /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SidebarViewController.h; path = View/SidebarViewController.h; sourceTree = "<group>"; };
 		374484CF19023BF8008FD15C /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarViewController.m; path = View/SidebarViewController.m; sourceTree = "<group>"; };
+		375E7091197FBD6F003E732A /* DetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailInfoViewController.h; path = View/DetailInfoViewController.h; sourceTree = "<group>"; };
+		375E7092197FBD6F003E732A /* DetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailInfoViewController.m; path = View/DetailInfoViewController.m; sourceTree = "<group>"; };
 		3760CF811906D90A0028D91E /* Ushahidi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Ushahidi.bundle; path = TWRadiationApp/Library/Ushahidi.bundle; sourceTree = "<group>"; };
 		3760CF821906D90A0028D91E /* Ushahidi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ushahidi.framework; path = TWRadiationApp/Library/Ushahidi.framework; sourceTree = "<group>"; };
 		3760CF851906D9660028D91E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -332,6 +335,8 @@
 				379B122C19025EBF00A336D7 /* StatisticsViewController.m */,
 				379B1234190268A000A336D7 /* MyTabBarController.h */,
 				379B1235190268A000A336D7 /* MyTabBarController.m */,
+				375E7091197FBD6F003E732A /* DetailInfoViewController.h */,
+				375E7092197FBD6F003E732A /* DetailInfoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -510,6 +515,7 @@
 				374484C61902358F008FD15C /* LauncherViewController.m in Sources */,
 				37F963A9193123DA008C7EA9 /* AFURLSessionManager.m in Sources */,
 				37F963A1193123DA008C7EA9 /* AFHTTPSessionManager.m in Sources */,
+				375E7093197FBD6F003E732A /* DetailInfoViewController.m in Sources */,
 				3744849C19023332008FD15C /* AppDelegate.m in Sources */,
 				3744849819023332008FD15C /* main.m in Sources */,
 				37F963A7193123DA008C7EA9 /* AFURLRequestSerialization.m in Sources */,
