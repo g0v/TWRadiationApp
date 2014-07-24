@@ -133,8 +133,21 @@
 }
 
 - (NSDictionary *)loginWithAccount:(NSString *)account passwd:(NSString *)passwd {
-    NSDictionary *userInfo = @{@"Name":account};
+    NSDictionary *userInfo;
+    if ([account isEqualToString:@"g0v"] && [passwd isEqualToString:@"g0v"]) {
+        isLogin = YES;
+        userInfo = @{@"Name":account};
+    }
+    else {
+        isLogin = NO;
+        userInfo = nil;
+    }
     return userInfo;
+}
+
+- (void)logout
+{
+    isLogin = NO;
 }
 
 - (BOOL)sendAccountInformationForRegist:(NSString *)account passwd:(NSString *)passwd deviceType:(NSString *)deviceType

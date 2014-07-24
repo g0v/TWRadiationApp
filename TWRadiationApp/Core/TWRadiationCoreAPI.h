@@ -50,6 +50,7 @@ typedef enum {
 
 - (BOOL) sendAccountInformationForRegist:(NSString*) account passwd:(NSString*) passwd deviceType:(NSString*) deviceType;
 - (NSDictionary*) loginWithAccount:(NSString*) account passwd:(NSString*) passwd;
+- (void) logout;
 - (NSDictionary*) getUsableDeviceList;
 
 - (NSArray*) getLocationInfoList;

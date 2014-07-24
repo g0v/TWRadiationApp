@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "DetailInfoViewController.h"
 
 @interface InfoViewController : UITableViewController
+{
+    TWRadiationCoreAPI   *coreApi;
+    NSArray *locationInfoList;
+}
 
 @end

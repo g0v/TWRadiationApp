@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "TWRadiationCoreAPI.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) TWRadiationCoreAPI *coreApi;
 
+- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
 @end
