@@ -8,7 +8,11 @@
 
 #import "AppDelegate.h"
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    NSString *userName;
+    NSString *userID;
+}
+
 @synthesize coreApi = _coreApi;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -88,6 +92,7 @@
         NSLog(@"Session opened");
         // Show the user the logged-in UI
         [self userLoggedIn];
+        [self fetchFacebookUserInfo];
         return;
     }
     if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){
@@ -95,6 +100,7 @@
         NSLog(@"Session closed");
         // Show the user the logged-out UI
         [self userLoggedOut];
+        [(id<userLoginCallback>)self._delegate fbLogin:@"" withID:@""]; //clean the user info
     }
     
     // Handle errors
@@ -147,7 +153,7 @@
 //    [loginButton setTitle:@"Log in with Facebook" forState:UIControlStateNormal];
     
     // Confirm logout message
-    [self showMessage:@"You're now logged out" withTitle:@""];
+//    [self showMessage:@"You're now logged out" withTitle:@""];
 }
 
 // Show the user the logged-in UI
@@ -158,7 +164,7 @@
 //    [loginButton setTitle:@"Log out" forState:UIControlStateNormal];
     
     // Welcome message
-    [self showMessage:@"You're now logged in" withTitle:@"Welcome!"];
+//    [self showMessage:@"You're now logged in" withTitle:@"Welcome!"];
     
 }
 
@@ -170,6 +176,23 @@
                                delegate:self
                       cancelButtonTitle:@"OK!"
                       otherButtonTitles:nil] show];
+}
+
+- (void)fetchFacebookUserInfo {
+    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection,
+                                                           id<FBGraphUser> user,
+                                                           NSError *error) {
+        if (!error) {
+            userName = user.name;
+            userID = [user objectForKey:@"id"];
+            NSLog(@"Username %@, ID=%@",userName, userID);
+//            NSLog(@"Email %@",[user objectForKey:@"email"]);
+            if ([self._delegate conformsToProtocol:@protocol(userLoginCallback)]) {
+                [(id<userLoginCallback>)self._delegate fbLogin:userName withID:userID];
+            }
+
+        }
+    }];
 }
 
 @end

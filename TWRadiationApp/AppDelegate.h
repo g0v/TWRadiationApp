@@ -10,8 +10,13 @@
 #import "TWRadiationCoreAPI.h"
 #import <FacebookSDK/FacebookSDK.h>
 
+@protocol userLoginCallback <NSObject>
+-(void) fbLogin:(NSString*) name withID:(NSString*)userid;
+@end
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (strong, nonatomic) id<userLoginCallback> _delegate;
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) TWRadiationCoreAPI *coreApi;
 

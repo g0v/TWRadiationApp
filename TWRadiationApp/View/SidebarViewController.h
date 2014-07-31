@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-@interface SidebarViewController : UITableViewController
+@interface SidebarViewController : UITableViewController <userLoginCallback>
 {
     NSArray *menuItems;
     IBOutlet UITableView *tableview;

@@ -9,7 +9,10 @@
 #import "SidebarViewController.h"
 #import "SWRevealViewController.h"
 
-@interface SidebarViewController ()
+@interface SidebarViewController () {
+    NSString *userName;
+    NSString *userID;
+}
 
 @end
 
@@ -19,14 +22,14 @@
     return UIStatusBarStyleLightContent;
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
+/*- (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
     return self;
-}
+}*/
 
 - (void)viewDidLoad
 {
@@ -43,6 +46,10 @@
     tableview.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
     
     menuItems = @[@"title", @"login", @"upload"];
+    
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
+    appDelegate._delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,7 +79,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    
+    if (indexPath.row == 0) {
+        cell.textLabel.text = userName;
+        cell.textLabel.textColor = [UIColor lightGrayColor];
+    }
     return cell;
 }
 
@@ -156,5 +166,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Callback method to update user info
+-(void) fbLogin:(NSString*) name withID:(NSString*)userid{
+    userName = name;
+    userID = userid;
+    [tableview reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+}
 
 @end
