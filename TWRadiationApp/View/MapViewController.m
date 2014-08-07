@@ -8,32 +8,51 @@
 
 #import "MapViewController.h"
 #import "TWRadiationConstant.h"
+#import "RadiationAnnotation.h"
+#import "TWRadiationCoreAPI.h"
+#import "AppDelegate.h"
 
 @interface RadiatonMapViewController ()
 
 @end
 
-@implementation RadiatonMapViewController
+@implementation RadiatonMapViewController {
+    TWRadiationCoreAPI   *coreApi;
+    NSArray *locationInfoList;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-/*    locationManager = [[CLLocationManager alloc] init];
+    locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [mapView setDelegate:self];
-    [mapView setShowsUserLocation:YES];*/
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:WEB_HOMEPAGE]]];
+    [mapView setShowsUserLocation:YES];
+//    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:WEB_HOMEPAGE]]];
+    
+    if (coreApi == nil) {
+        AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+        coreApi = [appDelegate coreApi];
+    }
+
+/*    UIBarButtonItem *rightButton = self.navigationItem.rightBarButtonItem;
+    [rightButton setTintColor: nil];
+    [rightButton setEnabled: YES];*/
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+
     [super viewDidAppear:animated];
     [currentAddress setText:@""];
-//    [locationManager startUpdatingLocation];
+    [locationManager startUpdatingLocation];
+
+    locationInfoList = [coreApi getLocationInfoList];
+//    [self addAnnotation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,16 +61,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UIWebViewDelegate methods
+/*#pragma mark - UIWebViewDelegate methods
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     [loadingIndicator startAnimating];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [loadingIndicator stopAnimating];
-}
+}*/
 
-/*
+#pragma mark - Custom methods
 - (void)askAddressByLocation:(CLLocation*) location {
     CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
     [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -98,16 +117,93 @@
 - (void)showAddressResultByGoogleApi:(NSDictionary*) jsonObj
 {
     NSArray *result = [jsonObj objectForKey:@"results"];
-    NSLog(@"%@", [[result objectAtIndex:0] objectForKey:@"formatted_address"]);
+    NSLog(@"addr=%@", [[result objectAtIndex:0] objectForKey:@"formatted_address"]);
     [currentAddress setText:[[result objectAtIndex:0] objectForKey:@"formatted_address"]];
+//    [currentAddress setBackgroundColor:[UIColor blackColor]];
 }
 
 - (void)pushUpdateAddressButton:(id)sender
 {
+    NSLog(@">>%s",__PRETTY_FUNCTION__);
     [currentAddress setText:@""];
     [locationManager startUpdatingLocation];
 }
+/*
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    //    CustomMapAnnotationView *annotationView = nil;
+    MKAnnotationView *annotationView = nil;
+    
+    // determine the type of annotation, and produce the correct type of annotation view for it.
+//    MKAnnotation* myAnnotation = (MKAnnotation *)annotation;
+    
+    NSString* identifier = @"CustomMapAnnotation";
+    MKAnnotationView *newAnnotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    if(nil == newAnnotationView) {
+        newAnnotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    }
+    
+    annotationView = newAnnotationView;
+    [annotationView setEnabled:YES];
+    [annotationView setCanShowCallout:YES];
+    
+    return annotationView;
+}
 
+- (CustomMapAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+//    CustomMapAnnotationView *annotationView = nil;
+    CustomMapAnnotationView *annotationView = nil;
+    
+    // determine the type of annotation, and produce the correct type of annotation view for it.
+    CustomMapAnnotation* myAnnotation = (CustomMapAnnotation *)annotation;
+    
+    NSString* identifier = @"CustomMapAnnotation";
+    CustomMapAnnotationView *newAnnotationView = (CustomMapAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    if(nil == newAnnotationView) {
+        newAnnotationView = [[[CustomMapAnnotationView alloc] initWithAnnotation:myAnnotation reuseIdentifier:identifier] autorelease];
+    }
+    
+    annotationView = newAnnotationView;
+    [annotationView setEnabled:YES];
+    [annotationView setCanShowCallout:YES];
+    
+    return annotationView;
+}
+*/
+
+- (void)addAnnotation
+{
+    // 建立一個CLLocationCoordinate2D
+    CLLocationCoordinate2D mylocation;
+    mylocation.latitude = 25.01141;
+    mylocation.longitude = 121.42554;
+    
+    // 建立一個region，待會要設定給MapView
+    MKCoordinateRegion kaos_digital;
+    
+    // 設定經緯度
+    kaos_digital.center = mylocation;
+    
+    // 設定縮放比例
+    kaos_digital.span.latitudeDelta = 0.003;
+    kaos_digital.span.longitudeDelta = 0.003;
+    
+    // 準備一個annotation
+//    MyCompany *mycompany = [[MyCompany alloc] initWithCoordinate:mylocation];
+    RadiationAnnotation *mycompany= [[RadiationAnnotation alloc] init];
+    mycompany.title = @"高思數位網路";
+    mycompany.subtitle = @"媽，我在這裡啦!";
+    
+    [mapView setRegion:kaos_digital];
+    
+    // 把annotation加進MapView裡
+    [mapView addAnnotation:mycompany];
+    
+    [super viewDidLoad];
+}
 
 #pragma mark - Methods of CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -133,6 +229,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

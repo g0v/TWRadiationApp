@@ -7,17 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import <CoreLocation/CoreLocation.h>
-//#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface RadiatonMapViewController : UIViewController <UIWebViewDelegate>{
-//    CLLocationManager *locationManager;
-//    IBOutlet MKMapView *mapView;
+@interface RadiatonMapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate> //<UIWebViewDelegate>
+{
+    CLLocationManager *locationManager;
+    IBOutlet MKMapView *mapView;
     IBOutlet UILabel* currentAddress;
-    IBOutlet UIWebView *webView;
     IBOutlet UIActivityIndicatorView *loadingIndicator;
+    //    IBOutlet UIWebView *webView;
 }
 
-//- (IBAction)pushUpdateAddressButton:(id)sender;
+- (IBAction)pushUpdateAddressButton:(id)sender;
 
 @end

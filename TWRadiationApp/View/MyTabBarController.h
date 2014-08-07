@@ -11,6 +11,7 @@
 @interface MyTabBarController : UITabBarController <UITabBarControllerDelegate>
 {
     IBOutlet UIBarButtonItem* menuButton;
+    IBOutlet UIBarButtonItem *rightButton;
 }
 
 @end

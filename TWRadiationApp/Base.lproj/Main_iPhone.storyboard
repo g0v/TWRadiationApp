@@ -213,6 +213,7 @@
                 <tabBarController definesPresentationContext="YES" id="8cj-aB-r01" customClass="MyTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="933-3s-k60">
                         <barButtonItem key="leftBarButtonItem" image="list.png" id="c0R-TI-QdV"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="plain" systemItem="refresh" id="YZb-Sz-tZQ"/>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -224,6 +225,7 @@
                     </tabBar>
                     <connections>
                         <outlet property="menuButton" destination="c0R-TI-QdV" id="s3c-CJ-R9c"/>
+                        <outlet property="rightButton" destination="YZb-Sz-tZQ" id="Ccr-Bx-E2e"/>
                         <segue destination="PiK-Df-QNm" kind="relationship" relationship="viewControllers" id="v59-8G-111"/>
                         <segue destination="NlQ-9L-O3S" kind="relationship" relationship="viewControllers" id="eWB-iL-OMq"/>
                         <segue destination="xfD-oV-CYH" kind="relationship" relationship="viewControllers" id="9Td-Ih-syW"/>
@@ -377,23 +379,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="CurrentAddress" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="EUJ-1e-eRP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="CurrentAddress" text="" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="EUJ-1e-eRP">
                                 <rect key="frame" x="10" y="59" width="290" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oVs-Z6-DBo">
-                                <rect key="frame" x="10" y="74" width="303" height="435"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Hyc-oZ-Y3A">
                                 <rect key="frame" x="142" y="199" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gZ-5t-8rD">
+                                <rect key="frame" x="0.0" y="65" width="320" height="454"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uy6-Kg-SMd">
+                                <rect key="frame" x="10" y="469" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushUpdateAddressButton:" destination="PiK-Df-QNm" eventType="touchUpInside" id="X63-Z5-tEL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -401,7 +412,7 @@
                     <connections>
                         <outlet property="currentAddress" destination="EUJ-1e-eRP" id="YeW-yN-usU"/>
                         <outlet property="loadingIndicator" destination="Hyc-oZ-Y3A" id="dJc-Cr-npH"/>
-                        <outlet property="webView" destination="oVs-Z6-DBo" id="xDS-t6-JRI"/>
+                        <outlet property="mapView" destination="0gZ-5t-8rD" id="vyl-MP-eYN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jz8-ka-1QC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -611,6 +622,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="58c-bN-kWv"/>
+        <segue reference="hyn-Z9-3tj"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -21,6 +21,7 @@
     menuButton.target = self.revealViewController;
     menuButton.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    [rightButton setTintColor: [UIColor clearColor]];
 }
 
 - (void)didReceiveMemoryWarning
