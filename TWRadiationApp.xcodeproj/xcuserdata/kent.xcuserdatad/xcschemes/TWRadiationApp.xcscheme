@@ -37,11 +37,6 @@
                BlueprintName = "TWRadiationAppTests"
                ReferencedContainer = "container:TWRadiationApp.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "TWRadiationCoreApiTests/testSubmitLocationInfo">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

@@ -174,13 +174,12 @@
 
 - (NSArray*)parseUshahidiIncidentsJson:(id) jsonObj
 {
-    NSMutableArray *parsedList = nil;
+    NSMutableArray *parsedList = [[NSMutableArray alloc] init];
     NSArray        *incidentsList = nil;
     if (jsonObj &&
         [jsonObj objectForKey:@"payload"] &&
         [[jsonObj objectForKey:@"payload"] objectForKey:@"incidents"]) {
         incidentsList = [[jsonObj objectForKey:@"payload"] objectForKey:@"incidents"];
-        parsedList = [[NSMutableArray alloc] init];
         for (int i = 0; i < [incidentsList count]; i++) {
             id obj = [incidentsList objectAtIndex:i];
             id objInc = [obj objectForKey:@"incident"];

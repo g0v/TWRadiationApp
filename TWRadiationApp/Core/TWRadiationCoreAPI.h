@@ -17,7 +17,8 @@
 #define TASK_CATEGORIES             @"categories"
 #define REST_API_CMD                @"?task="
 #define RADIATION_SERVER_REST_RUL   @"http://www.knownuke.tw/map/index.php/api"
-#define RADIATION_DEV_REST_RUL      @"http://u273.stark.tw/api"
+#define RADIATION_DEV_REST_RUL      @"http://g0v.kentwelcome.kd.io/g0v/api" //@"http://u273.stark.tw/api"
+//#define RADIATION_DEV_KENT_REST_RUL @"http://g0v.kentwelcome.kd.io/g0v/api"
 
 #define HIGHT_TYPE                  @"1"
 #define AREA_TYPE                   @"2"
