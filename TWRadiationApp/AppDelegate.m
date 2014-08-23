@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate {
     NSString *userName;
@@ -20,6 +21,11 @@
     // Override point for customization after application launch.
     if (self.coreApi == nil) {
         self.coreApi = [[TWRadiationCoreAPI alloc] init];
+        
+        // Use Parse to handle login
+        [Parse setApplicationId:@"hSfAuwdkTzTtKEYNHpduQHGFn1hPKCTTH0IgeCJf"
+                      clientKey:@"WUECUlKCp3flUtFMu960xBj135dGjVgWMHg0eMi9"];
+        [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
         // Whenever a person opens the app, check for a cached session
         if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {

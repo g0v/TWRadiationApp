@@ -66,6 +66,16 @@
 		37F963A8193123DA008C7EA9 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F9639F193123DA008C7EA9 /* AFHTTPRequestOperation.m */; };
 		37F963A9193123DA008C7EA9 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F963A0193123DA008C7EA9 /* AFURLSessionManager.m */; };
 		37F963AB1931FC3A008C7EA9 /* TWRadiationCoreApiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F963AA1931FC3A008C7EA9 /* TWRadiationCoreApiTests.m */; };
+		37FAFA9319A9193E00F1E1A7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FAFA9219A9193E00F1E1A7 /* Parse.framework */; };
+		37FAFA9519A91A1C00F1E1A7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FAFA9419A91A1C00F1E1A7 /* AudioToolbox.framework */; };
+		37FAFA9719A91A2800F1E1A7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FAFA9619A91A2800F1E1A7 /* CFNetwork.framework */; };
+		37FAFA9919A91A3900F1E1A7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FAFA9819A91A3900F1E1A7 /* libz.dylib */; };
+		37FAFA9A19A91A4300F1E1A7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF871906D9770028D91E /* MobileCoreServices.framework */; };
+		37FAFA9B19A91A6E00F1E1A7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF8D1906D9960028D91E /* QuartzCore.framework */; };
+		37FAFA9C19A91A7900F1E1A7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF8F1906D9A30028D91E /* Security.framework */; };
+		37FAFA9E19A91A8200F1E1A7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FAFA9D19A91A8200F1E1A7 /* StoreKit.framework */; };
+		37FAFA9F19A91A8F00F1E1A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF911906D9B50028D91E /* SystemConfiguration.framework */; };
+		37FAFAA119A91B9800F1E1A7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FAFAA019A91B9800F1E1A7 /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +183,12 @@
 		37F9639F193123DA008C7EA9 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = Library/AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		37F963A0193123DA008C7EA9 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = Library/AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
 		37F963AA1931FC3A008C7EA9 /* TWRadiationCoreApiTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWRadiationCoreApiTests.m; sourceTree = "<group>"; };
+		37FAFA9219A9193E00F1E1A7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "TWRadiationApp/Library/parse-library-1.2.21/Parse.framework"; sourceTree = "<group>"; };
+		37FAFA9419A91A1C00F1E1A7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		37FAFA9619A91A2800F1E1A7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		37FAFA9819A91A3900F1E1A7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		37FAFA9D19A91A8200F1E1A7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		37FAFAA019A91B9800F1E1A7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "TWRadiationApp/Library/parse-library-1.2.21/Bolts.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,12 +196,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37FAFA9F19A91A8F00F1E1A7 /* SystemConfiguration.framework in Frameworks */,
+				37FAFA9E19A91A8200F1E1A7 /* StoreKit.framework in Frameworks */,
+				37FAFA9C19A91A7900F1E1A7 /* Security.framework in Frameworks */,
+				37FAFA9B19A91A6E00F1E1A7 /* QuartzCore.framework in Frameworks */,
+				37FAFA9A19A91A4300F1E1A7 /* MobileCoreServices.framework in Frameworks */,
+				37FAFA9919A91A3900F1E1A7 /* libz.dylib in Frameworks */,
+				37FAFA9719A91A2800F1E1A7 /* CFNetwork.framework in Frameworks */,
+				37FAFA9519A91A1C00F1E1A7 /* AudioToolbox.framework in Frameworks */,
 				1AA92E8D195BADE7005BF09B /* Social.framework in Frameworks */,
 				1A5335A3195BB4C900A1E0B2 /* FacebookSDK.framework in Frameworks */,
 				3760CF9E1906DB980028D91E /* libsqlite3.0.dylib in Frameworks */,
 				3760CF8A1906D9810028D91E /* MapKit.framework in Frameworks */,
 				3760CF861906D9660028D91E /* CoreFoundation.framework in Frameworks */,
 				379B123919026D4E00A336D7 /* CoreLocation.framework in Frameworks */,
+				37FAFA9319A9193E00F1E1A7 /* Parse.framework in Frameworks */,
+				37FAFAA119A91B9800F1E1A7 /* Bolts.framework in Frameworks */,
 				3744848E19023332008FD15C /* CoreGraphics.framework in Frameworks */,
 				3744849019023332008FD15C /* UIKit.framework in Frameworks */,
 				3744848C19023332008FD15C /* Foundation.framework in Frameworks */,
@@ -248,6 +274,12 @@
 		3744848A19023332008FD15C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37FAFAA019A91B9800F1E1A7 /* Bolts.framework */,
+				37FAFA9D19A91A8200F1E1A7 /* StoreKit.framework */,
+				37FAFA9819A91A3900F1E1A7 /* libz.dylib */,
+				37FAFA9619A91A2800F1E1A7 /* CFNetwork.framework */,
+				37FAFA9419A91A1C00F1E1A7 /* AudioToolbox.framework */,
+				37FAFA9219A9193E00F1E1A7 /* Parse.framework */,
 				1A5335A2195BB4C900A1E0B2 /* FacebookSDK.framework */,
 				3760CF9F1906DBA60028D91E /* AdSupport.framework */,
 				3760CF9D1906DB980028D91E /* libsqlite3.0.dylib */,
@@ -670,6 +702,7 @@
 					"$(PROJECT_DIR)/TWRadiationApp/Library",
 					"$(PROJECT_DIR)",
 					/Users/charleslu/Documents/g0v/TWRadiationApp,
+					"$(PROJECT_DIR)/TWRadiationApp/Library/parse-library-1.2.21",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TWRadiationApp/TWRadiationApp-Prefix.pch";
@@ -691,6 +724,7 @@
 					"$(PROJECT_DIR)/TWRadiationApp/Library",
 					"$(PROJECT_DIR)",
 					/Users/charleslu/Documents/g0v/TWRadiationApp,
+					"$(PROJECT_DIR)/TWRadiationApp/Library/parse-library-1.2.21",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TWRadiationApp/TWRadiationApp-Prefix.pch";
