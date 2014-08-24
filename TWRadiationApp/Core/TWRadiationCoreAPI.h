@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "AFNetworking.h"
 #import "Device.h"
+#import <Parse/Parse.h>
 
 #define TASK_INVALID                @"invalid"
 #define TASK_INCIDENTS              @"incidents"
@@ -51,7 +52,9 @@ typedef enum {
 - (BOOL) sendAccountInformationForRegist:(NSString*) account passwd:(NSString*) passwd deviceType:(NSString*) deviceType;
 - (NSDictionary*) loginWithAccount:(NSString*) account passwd:(NSString*) passwd;
 - (void) logout;
+- (BOOL) signUpWithUsername:(NSString*) username password:(NSString*)password email:(NSString*)email error:(NSError **)error;
 - (NSDictionary*) getUsableDeviceList;
+
 
 - (NSArray*) getLocationInfoList;
 - (NSString*) getCurrentAddress;

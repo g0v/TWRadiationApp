@@ -115,4 +115,10 @@
     XCTAssertEqualObjects([[jsonObj objectForKey:@"error"] objectForKey:@"code"], @"0", @"");
     
 }
+
+- (void)testSignUp
+{
+    BOOL rc;
+    rc = [coreApi signUpWithUsername:@"test" password:@"testtest" email:@"test@testdomain.org"];
+}
 @end

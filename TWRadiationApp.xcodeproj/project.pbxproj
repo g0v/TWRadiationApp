@@ -76,6 +76,7 @@
 		37FAFA9E19A91A8200F1E1A7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FAFA9D19A91A8200F1E1A7 /* StoreKit.framework */; };
 		37FAFA9F19A91A8F00F1E1A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF911906D9B50028D91E /* SystemConfiguration.framework */; };
 		37FAFAA119A91B9800F1E1A7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FAFAA019A91B9800F1E1A7 /* Bolts.framework */; };
+		37FAFAA419A9216300F1E1A7 /* SingUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FAFAA319A9216300F1E1A7 /* SingUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,8 @@
 		37FAFA9819A91A3900F1E1A7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		37FAFA9D19A91A8200F1E1A7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		37FAFAA019A91B9800F1E1A7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "TWRadiationApp/Library/parse-library-1.2.21/Bolts.framework"; sourceTree = "<group>"; };
+		37FAFAA219A9216300F1E1A7 /* SingUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SingUpViewController.h; path = View/SingUpViewController.h; sourceTree = "<group>"; };
+		37FAFAA319A9216300F1E1A7 /* SingUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingUpViewController.m; path = View/SingUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +368,8 @@
 				379B122919025E9700A336D7 /* InfoViewController.m */,
 				1AD4F9821947DF8700B9958F /* LoginViewController.h */,
 				1AD4F9831947DF8700B9958F /* LoginViewController.m */,
+				37FAFAA219A9216300F1E1A7 /* SingUpViewController.h */,
+				37FAFAA319A9216300F1E1A7 /* SingUpViewController.m */,
 				1AB572181951276700398E27 /* UploadViewController.h */,
 				1AB572191951276700398E27 /* UploadViewController.m */,
 				379B122B19025EBF00A336D7 /* StatisticsViewController.h */,
@@ -561,6 +566,7 @@
 				37F963A3193123DA008C7EA9 /* AFSecurityPolicy.m in Sources */,
 				379B122A19025E9700A336D7 /* InfoViewController.m in Sources */,
 				374484CD19023AED008FD15C /* SWRevealViewController.m in Sources */,
+				37FAFAA419A9216300F1E1A7 /* SingUpViewController.m in Sources */,
 				379B122D19025EBF00A336D7 /* StatisticsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

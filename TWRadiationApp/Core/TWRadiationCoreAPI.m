@@ -160,6 +160,27 @@
     return nil;
 }
 
+- (BOOL)signUpWithUsername:(NSString *)username password:(NSString *)password email:(NSString *)email error:(NSError **)error
+{
+    PFUser *user = [PFUser user];
+    BOOL rc = NO;
+    
+    if ([username isEqualToString:@""] ||
+        [password isEqualToString:@""] ||
+        [email isEqualToString:@""]) {
+        NSLog(@"Leak information for sing up");
+        *error = [[NSError alloc] initWithDomain:@"Parse" code:500 userInfo:@{@"error":@"Empty input data", @"code":@"500"}];
+        return NO;
+    }
+    
+    user.username = username;
+    user.password = password;
+    user.email    = email;
+    
+    rc = [user signUp:error];
+    return rc;
+}
+
 #pragma mark Api for Geography Information
 - (id) getMediaFromUshahidiMediaObj:(id)mediaObj key:(NSString*)key
 {
