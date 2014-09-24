@@ -11,6 +11,8 @@
 #import "RadiationAnnotation.h"
 #import "TWRadiationCoreAPI.h"
 #import "AppDelegate.h"
+#import <MapKit/MapKit.h>
+#import <UIKit/UIKit.h>
 
 @interface RadiatonMapViewController ()
 
@@ -46,12 +48,17 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-
     [super viewDidAppear:animated];
     [currentAddress setText:@""];
     [locationManager startUpdatingLocation];
 
     locationInfoList = [coreApi getLocationInfoList];
+    NSLog(@">>loc=%@",locationInfoList);
+    
+    NSArray *locArray = [self createAnnotations:locationInfoList];
+    for (id<MKAnnotation> loc in locArray ) {
+        [mapView addAnnotation:loc];
+    }
 //    [self addAnnotation];
 }
 
@@ -71,6 +78,24 @@
 }*/
 
 #pragma mark - Custom methods
+- (NSMutableArray *)createAnnotations:(NSArray *) locArray {
+    
+    NSMutableArray *annotations = [[NSMutableArray alloc] init];
+    for (NSDictionary *locationInfo in locArray) {
+        RadiationAnnotation *annos = [[RadiationAnnotation alloc] init];
+        
+        //Create coordinates from the latitude and longitude values
+        NSNumber *latitude = [locationInfo objectForKey:@"locationLatitude"];
+        NSNumber *longitude = [locationInfo objectForKey:@"locationLongitude"];
+        
+        annos.title = [NSString stringWithFormat:@"%@ %@",[locationInfo objectForKey:@"locationName"],[locationInfo objectForKey:@"area"]];
+        annos.subtitle = [NSString stringWithFormat:@"%@ (%@)",[locationInfo objectForKey:@"microSievert"],[locationInfo objectForKey:@"device"]];
+        annos.coordinate = CLLocationCoordinate2DMake(latitude.doubleValue, longitude.doubleValue);;
+        [annotations addObject:annos];
+    }
+    return annotations;
+}
+
 - (void)askAddressByLocation:(CLLocation*) location {
     CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
     [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -124,7 +149,6 @@
 
 - (void)pushUpdateAddressButton:(id)sender
 {
-    NSLog(@">>%s",__PRETTY_FUNCTION__);
     [currentAddress setText:@""];
     [locationManager startUpdatingLocation];
 }
@@ -172,7 +196,6 @@
     
     return annotationView;
 }
-*/
 
 - (void)addAnnotation
 {
@@ -202,7 +225,11 @@
     // 把annotation加進MapView裡
     [mapView addAnnotation:mycompany];
     
-    [super viewDidLoad];
+//    [super viewDidLoad];
+}*/
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    return nil;
 }
 
 #pragma mark - Methods of CLLocationManagerDelegate

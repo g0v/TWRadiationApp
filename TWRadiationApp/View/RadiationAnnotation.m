@@ -9,5 +9,16 @@
 #import "RadiationAnnotation.h"
 
 @implementation RadiationAnnotation
+@synthesize coordinate;
+@synthesize title;
+@synthesize subtitle;
 
+-(MKAnnotationView*) annotationView {
+    MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:@"raditationAnnotation"];
+    
+    annotationView.enabled = YES;
+    annotationView.canShowCallout = YES;
+    annotationView.image = [UIImage imageNamed:@"radiation"];
+    return annotationView;
+}
 @end
