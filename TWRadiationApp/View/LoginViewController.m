@@ -89,18 +89,17 @@
 #pragma makr - check user login 
 - (void)pushLoginButton:(id)sender
 {
-    if ([coreApi isLogin] == YES) {
-        NSLog(@"Already login~");
-    }
-    else {
-        NSDictionary *userInfo = [coreApi loginWithAccount:userAccount.text passwd:userPasswd.text];
-        if (userInfo) {
-            NSLog(@"Login with user: %@",userAccount.text);
-        }
-        else {
-            NSLog(@"Login fail!");
-        }
-    }
+    [PFUser logInWithUsernameInBackground:userAccount.text password:userPasswd.text
+        block:^(PFUser *user, NSError *error) {
+            if (user) {
+                // Do stuff after successful login.
+                NSLog(@"Login succussfully");
+            } else {
+                // The login failed. Check error to see why.
+                UIAlertView* loginAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:[[error userInfo] objectForKey:@"error"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [loginAlert show];
+            }
+    }];
 }
 
 - (void)revealToggle:(id)sender

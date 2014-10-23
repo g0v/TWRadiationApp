@@ -10,8 +10,9 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <Social/Social.h>
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
-@interface LoginViewController : UIViewController <FBLoginViewDelegate,UITextFieldDelegate>
+@interface LoginViewController : UIViewController <FBLoginViewDelegate,UITextFieldDelegate, UIAlertViewDelegate>
 {
     TWRadiationCoreAPI   *coreApi;
     IBOutlet UITextField *userAccount;
@@ -21,5 +22,6 @@
 
 - (IBAction)pushLoginButton:(id)sender;
 - (IBAction)revealToggle:(id)sender;
+
 
 @end
