@@ -11,6 +11,11 @@
 		1A424F2119906F4800CFE801 /* RadiationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A424F1F19906F4800CFE801 /* RadiationAnnotation.m */; };
 		1A5335A3195BB4C900A1E0B2 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5335A2195BB4C900A1E0B2 /* FacebookSDK.framework */; };
 		1A5CE766192DDC4A00608EBB /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CE764192DDC4A00608EBB /* Main_iPad.storyboard */; };
+		1A679FD019F4A47200BB6635 /* pin00BB00.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A679FCB19F4A47200BB6635 /* pin00BB00.png */; };
+		1A679FD119F4A47200BB6635 /* pin7E3D76.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A679FCC19F4A47200BB6635 /* pin7E3D76.png */; };
+		1A679FD219F4A47200BB6635 /* pin2894FF.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A679FCD19F4A47200BB6635 /* pin2894FF.png */; };
+		1A679FD319F4A47200BB6635 /* pinF75000.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A679FCE19F4A47200BB6635 /* pinF75000.png */; };
+		1A679FD419F4A47200BB6635 /* pinFFDC35.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A679FCF19F4A47200BB6635 /* pinFFDC35.png */; };
 		1AA92E8D195BADE7005BF09B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF931906D9DE0028D91E /* Social.framework */; };
 		1AB5721A1951276700398E27 /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB572191951276700398E27 /* UploadViewController.m */; };
 		1AD4F9751947D5B900B9958F /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4F9681947D5B900B9958F /* twitter.png */; };
@@ -95,6 +100,11 @@
 		1A424F1F19906F4800CFE801 /* RadiationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadiationAnnotation.m; path = View/RadiationAnnotation.m; sourceTree = "<group>"; };
 		1A5335A2195BB4C900A1E0B2 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		1A5CE765192DDC4A00608EBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		1A679FCB19F4A47200BB6635 /* pin00BB00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pin00BB00.png; path = Resources/pin00BB00.png; sourceTree = "<group>"; };
+		1A679FCC19F4A47200BB6635 /* pin7E3D76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pin7E3D76.png; path = Resources/pin7E3D76.png; sourceTree = "<group>"; };
+		1A679FCD19F4A47200BB6635 /* pin2894FF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pin2894FF.png; path = Resources/pin2894FF.png; sourceTree = "<group>"; };
+		1A679FCE19F4A47200BB6635 /* pinF75000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pinF75000.png; path = Resources/pinF75000.png; sourceTree = "<group>"; };
+		1A679FCF19F4A47200BB6635 /* pinFFDC35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pinFFDC35.png; path = Resources/pinFFDC35.png; sourceTree = "<group>"; };
 		1AB572181951276700398E27 /* UploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UploadViewController.h; path = View/UploadViewController.h; sourceTree = "<group>"; };
 		1AB572191951276700398E27 /* UploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UploadViewController.m; path = View/UploadViewController.m; sourceTree = "<group>"; };
 		1AD4F9681947D5B900B9958F /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = Resources/twitter.png; sourceTree = "<group>"; };
@@ -251,6 +261,11 @@
 				1AD4F9721947D5B900B9958F /* facebook.png */,
 				1AD4F9731947D5B900B9958F /* del.png */,
 				1AD4F9741947D5B900B9958F /* add.png */,
+				1A679FCB19F4A47200BB6635 /* pin00BB00.png */,
+				1A679FCC19F4A47200BB6635 /* pin7E3D76.png */,
+				1A679FCD19F4A47200BB6635 /* pin2894FF.png */,
+				1A679FCE19F4A47200BB6635 /* pinF75000.png */,
+				1A679FCF19F4A47200BB6635 /* pinFFDC35.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -510,18 +525,23 @@
 				1A5CE766192DDC4A00608EBB /* Main_iPad.storyboard in Resources */,
 				374484A719023332008FD15C /* Images.xcassets in Resources */,
 				1AD4F9791947D5B900B9958F /* photo.png in Resources */,
+				1A679FD119F4A47200BB6635 /* pin7E3D76.png in Resources */,
 				3744849619023332008FD15C /* InfoPlist.strings in Resources */,
 				1AD4F97C1947D5B900B9958F /* list.png in Resources */,
+				1A679FD019F4A47200BB6635 /* pin00BB00.png in Resources */,
 				1AD4F97B1947D5B900B9958F /* location.png in Resources */,
 				1AD4F9751947D5B900B9958F /* twitter.png in Resources */,
 				1AD4F97A1947D5B900B9958F /* map.png in Resources */,
+				1A679FD219F4A47200BB6635 /* pin2894FF.png in Resources */,
 				1AD4F9801947D5B900B9958F /* del.png in Resources */,
 				1AD4F9811947D5B900B9958F /* add.png in Resources */,
+				1A679FD319F4A47200BB6635 /* pinF75000.png in Resources */,
 				1AD4F9761947D5B900B9958F /* statistics.png in Resources */,
 				1AD4F97F1947D5B900B9958F /* facebook.png in Resources */,
 				3760CF831906D90A0028D91E /* Ushahidi.bundle in Resources */,
 				1AD4F97D1947D5B900B9958F /* information.png in Resources */,
 				1AD4F97E1947D5B900B9958F /* home.png in Resources */,
+				1A679FD419F4A47200BB6635 /* pinFFDC35.png in Resources */,
 				1AD4F9781947D5B900B9958F /* radiation.png in Resources */,
 				3744849F19023332008FD15C /* Main_iPhone.storyboard in Resources */,
 				1AD4F9771947D5B900B9958F /* share.png in Resources */,

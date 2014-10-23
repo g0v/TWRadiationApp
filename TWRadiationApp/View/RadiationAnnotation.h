@@ -18,6 +18,9 @@
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (copy,nonatomic) NSString *title;
 @property (copy,nonatomic) NSString *subtitle;
+@property (nonatomic) float radiationValue;
 
--(MKAnnotationView*) annotationView;
+//-(MKPinAnnotationView*) annotationView;
+-(UIColor*) getColor;
+-(UIImage*) getImage;
 @end

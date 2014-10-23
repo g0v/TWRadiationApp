@@ -56,10 +56,7 @@
     NSLog(@">>loc=%@",locationInfoList);
     
     NSArray *locArray = [self createAnnotations:locationInfoList];
-    for (id<MKAnnotation> loc in locArray ) {
-        [mapView addAnnotation:loc];
-    }
-//    [self addAnnotation];
+    [mapView addAnnotations:locArray];
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,6 +88,7 @@
         annos.title = [NSString stringWithFormat:@"%@ %@",[locationInfo objectForKey:@"locationName"],[locationInfo objectForKey:@"area"]];
         annos.subtitle = [NSString stringWithFormat:@"%@ (%@)",[locationInfo objectForKey:@"microSievert"],[locationInfo objectForKey:@"device"]];
         annos.coordinate = CLLocationCoordinate2DMake(latitude.doubleValue, longitude.doubleValue);;
+        annos.radiationValue = [[locationInfo objectForKey:@"microSievert"] floatValue];        
         [annotations addObject:annos];
     }
     return annotations;
@@ -175,28 +173,6 @@
     return annotationView;
 }
 
-- (CustomMapAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
-{
-//    CustomMapAnnotationView *annotationView = nil;
-    CustomMapAnnotationView *annotationView = nil;
-    
-    // determine the type of annotation, and produce the correct type of annotation view for it.
-    CustomMapAnnotation* myAnnotation = (CustomMapAnnotation *)annotation;
-    
-    NSString* identifier = @"CustomMapAnnotation";
-    CustomMapAnnotationView *newAnnotationView = (CustomMapAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    
-    if(nil == newAnnotationView) {
-        newAnnotationView = [[[CustomMapAnnotationView alloc] initWithAnnotation:myAnnotation reuseIdentifier:identifier] autorelease];
-    }
-    
-    annotationView = newAnnotationView;
-    [annotationView setEnabled:YES];
-    [annotationView setCanShowCallout:YES];
-    
-    return annotationView;
-}
-
 - (void)addAnnotation
 {
     // 建立一個CLLocationCoordinate2D
@@ -228,7 +204,32 @@
 //    [super viewDidLoad];
 }*/
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+- (MKAnnotationView *)mapView:(MKMapView *)aMapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    static NSString *radiationAnnoID=@"RadiationAnnotationIdentifier";
+    
+    if ([annotation isKindOfClass:[RadiationAnnotation class]]) {
+        RadiationAnnotation *radiationAnno = (RadiationAnnotation*)annotation;
+        
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[aMapView dequeueReusableAnnotationViewWithIdentifier:radiationAnnoID];
+        if (annotationView == nil) {
+            annotationView=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:radiationAnnoID];
+//            NSLog(@"title=%@ %f",radiationAnno.title, radiationAnno.radiationValue);
+
+            annotationView.image = [radiationAnno getImage];
+//            annotationView.pinColor = [radiationAnno getColor];
+/*            if ((radiationAnno.radiationValue) >0.6) {
+                annotationView.pinColor = MKPinAnnotationColorPurple;
+            } else if ((radiationAnno.radiationValue) <0.2) {
+                annotationView.pinColor = MKPinAnnotationColorGreen;
+            } else
+                annotationView.pinColor = MKPinAnnotationColorRed;*/
+        } else {                //Do not come here
+            annotationView.annotation = radiationAnno;
+//            NSLog(@"title2=%@",((RadiationAnnotation*)annotation).title);
+        }
+        annotationView.canShowCallout= YES;
+        return annotationView;
+    }
     return nil;
 }
 
