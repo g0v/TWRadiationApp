@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "SWRevealViewController.h"
 
-@interface SidebarViewController : UITableViewController <userLoginCallback>
-{
-    NSArray *menuItems;
-    IBOutlet UITableView *tableview;
-}
+@interface SidebarViewController : UIViewController <userLoginCallback>
 
 @end

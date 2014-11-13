@@ -11,7 +11,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 @protocol userLoginCallback <NSObject>
--(void) fbLogin:(NSString*) name withID:(NSString*)userid;
+-(void) fbLogin:(NSString*) displayName shortname:(NSString*)shortName andID:(NSString*)userid;
 @end
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

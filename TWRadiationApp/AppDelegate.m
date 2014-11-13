@@ -10,7 +10,8 @@
 #import <Parse/Parse.h>
 
 @implementation AppDelegate {
-    NSString *userName;
+    NSString *userDisplayName;
+    NSString *userShortName;
     NSString *userID;
 }
 
@@ -106,7 +107,8 @@
         NSLog(@"Session closed");
         // Show the user the logged-out UI
         [self userLoggedOut];
-        [(id<userLoginCallback>)self._delegate fbLogin:@"" withID:@""]; //clean the user info
+        if ([self._delegate conformsToProtocol:@protocol(userLoginCallback)])
+            [(id<userLoginCallback>)self._delegate fbLogin:@"" shortname:@"" andID:@""]; //clean the user info
     }
     
     // Handle errors
@@ -189,14 +191,14 @@
                                                            id<FBGraphUser> user,
                                                            NSError *error) {
         if (!error) {
-            userName = user.name;
-            userID = [user objectForKey:@"id"];
-            NSLog(@"Username %@, ID=%@",userName, userID);
+            userDisplayName = user.name;
+            userID = user.id;   //[user objectForKey:@"id"];
+            userShortName= user.username;
+            NSLog(@"Username %@, ID=%@, shortname=%@",userDisplayName, userID, userShortName);
 //            NSLog(@"Email %@",[user objectForKey:@"email"]);
             if ([self._delegate conformsToProtocol:@protocol(userLoginCallback)]) {
-                [(id<userLoginCallback>)self._delegate fbLogin:userName withID:userID];
+                [(id<userLoginCallback>)self._delegate fbLogin:userDisplayName shortname:userShortName andID:userID];
             }
-
         }
     }];
 }

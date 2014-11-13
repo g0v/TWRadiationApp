@@ -16,6 +16,7 @@
 @end
 
 @implementation LoginViewController
+@synthesize userPassword, userID;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,13 +36,20 @@
         coreApi = [appDelegate coreApi];
     }
     
-    [self.revealButtonItem setAction: @selector( revealToggle: )];
+    [self.revealButtonItem setAction: @selector(revealToggle:)];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [userAccount setText:userID];
+    [userPasswd setText:userPassword];
 }
 
 - (IBAction)emailLogin:(id)sender {
@@ -86,11 +94,11 @@
     return YES;
 }
 
-#pragma makr - check user login 
-- (void)pushLoginButton:(id)sender
+#pragma mark - check user login
+- (IBAction)pushLoginButton:(id)sender
 {
     if ([coreApi isLogin] == YES) {
-        NSLog(@"Already login~");
+        NSLog(@"Already login.");
     }
     else {
         NSDictionary *userInfo = [coreApi loginWithAccount:userAccount.text passwd:userPasswd.text];
@@ -98,13 +106,12 @@
             NSLog(@"Login with user: %@",userAccount.text);
         }
         else {
-            NSLog(@"Login fail!");
+            if([coreApi signUpWithUsername:userID password:userPassword email:nil error:nil])
+                NSLog(@"Sign up succeed");
+            else
+                NSLog(@"Login fail!");
         }
     }
-}
-
-- (void)revealToggle:(id)sender
-{
 }
 
 @end

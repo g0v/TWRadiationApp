@@ -8,12 +8,18 @@
 
 #import "SidebarViewController.h"
 #import "SWRevealViewController.h"
+#import "LoginViewController.h"
 
 @interface SidebarViewController () {
-    NSString *userName;
-    NSString *userID;
-}
+    NSArray *menuItems;
 
+    IBOutlet UITableView *tableview;
+    NSString *userDisplayName;
+    NSString *userID;
+    NSString *userShortname;
+    
+    LoginViewController *loginViewController;
+}
 @end
 
 @implementation SidebarViewController
@@ -46,9 +52,9 @@
     tableview.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
     
     menuItems = @[@"title", @"login", @"upload"];
-    
-    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+
     // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate._delegate = self;
 }
 
@@ -80,7 +86,7 @@
     
     // Configure the cell...
     if (indexPath.row == 0) {
-        cell.textLabel.text = userName;
+        cell.textLabel.text = userDisplayName;
         cell.textLabel.textColor = [UIColor lightGrayColor];
     }
     return cell;
@@ -89,17 +95,6 @@
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
-    // configure the destination view controller:
-/*    if ( [segue.destinationViewController isKindOfClass: [ColorViewController class]] &&
-        [sender isKindOfClass:[UITableViewCell class]] )
-    {
-        UILabel* c = [(SWUITableViewCell *)sender label];
-        ColorViewController* cvc = segue.destinationViewController;
-        
-        cvc.color = c.textColor;
-        cvc.text = c.text;
-    }*/
-    
     // configure the segue.
     if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] )
     {
@@ -115,6 +110,16 @@
             UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:dvc];
             [rvc pushFrontViewController:nc animated:YES];
         };
+    }
+    
+    // configure the destination view controller:
+    if ([[segue identifier] isEqualToString:@"sw_login"]) {
+        loginViewController = [segue destinationViewController];
+
+        //if user had logged into FB previously, userLoginCallback will be called first but loginViewController is not initialized yet
+        //so we update user id & pwd here
+        [loginViewController setUserID:userID];
+        [loginViewController setUserPassword:userShortname];
     }
 }
 
@@ -168,10 +173,17 @@
 */
 
 #pragma mark - Callback method to update user info
--(void) fbLogin:(NSString*) name withID:(NSString*)userid{
-    userName = name;
+-(void) fbLogin:(NSString*) displayName shortname:(NSString*)shortName andID:(NSString*)userid {
+    userShortname = shortName;
     userID = userid;
-    [tableview reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-}
+    userDisplayName = displayName;
 
+    [tableview reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    
+    if (loginViewController) {
+        [loginViewController setUserID:userID];
+        [loginViewController setUserPassword:userShortname];
+        [loginViewController viewWillAppear:NO];
+    }
+}
 @end

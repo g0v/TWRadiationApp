@@ -8,7 +8,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="HM9-9B-hTd">
             <objects>
-                <viewController id="ACS-PT-alj" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="revealViewController" id="ACS-PT-alj" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cSi-PC-Hew"/>
                         <viewControllerLayoutGuide type="bottom" id="IdW-BZ-DJq"/>
@@ -31,7 +31,7 @@
         <!--Sidebar View Controller-->
         <scene sceneID="bxx-Ce-4fg">
             <objects>
-                <tableViewController id="UwU-U9-16q" customClass="SidebarViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SBViewController" id="UwU-U9-16q" customClass="SidebarViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8WB-4V-UJL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +64,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="C7b-uF-UYB" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegue" id="IaY-5U-g9n"/>
+                                    <segue destination="C7b-uF-UYB" kind="custom" identifier="sw_login" customClass="SWRevealViewControllerSegue" id="IaY-5U-g9n"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="upload" rowHeight="44" id="fq6-cq-9tG">
@@ -714,6 +714,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zu3-kW-9jJ"/>
+        <segue reference="58c-bN-kWv"/>
     </inferredMetricsTieBreakers>
 </document>

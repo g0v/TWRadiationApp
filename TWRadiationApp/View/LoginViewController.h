@@ -11,7 +11,7 @@
 #import <Social/Social.h>
 #import "AppDelegate.h"
 
-@interface LoginViewController : UIViewController <FBLoginViewDelegate,UITextFieldDelegate>
+@interface LoginViewController : UIViewController </*FBLoginViewDelegate,*/UITextFieldDelegate>
 {
     TWRadiationCoreAPI   *coreApi;
     IBOutlet UITextField *userAccount;
@@ -19,7 +19,9 @@
     IBOutlet UIButton    *loginButton;
 }
 
-- (IBAction)pushLoginButton:(id)sender;
-- (IBAction)revealToggle:(id)sender;
+@property (nonatomic, strong) NSString *userID;
+@property (nonatomic, strong) NSString *userPassword;
 
+- (IBAction)pushLoginButton:(id)sender;
+//- (IBAction)revealToggle:(id)sender;
 @end
