@@ -25,6 +25,13 @@
 #define DEVICE_TYPE                 @"3"
 #define POSITION_TYPE               @"14"
 
+
+typedef enum {
+    EMAIL,
+    FACEBOOK,
+    TWITTER
+} LOGIN_TYPE;
+
 typedef enum {
     ground = 6,
     meter = 7
@@ -42,7 +49,9 @@ typedef enum {
 
 @interface TWRadiationCoreAPI : NSObject
 {
-    BOOL isLogin;
+    BOOL        isLogin;
+    LOGIN_TYPE  loginType;
+    PFUser*     currentUser;
     NSDictionary *categoryTypeMapping;
 }
 
@@ -55,6 +64,9 @@ typedef enum {
 - (BOOL) signUpWithUsername:(NSString*) username password:(NSString*)password email:(NSString*)email error:(NSError **)error;
 - (NSDictionary*) getUsableDeviceList;
 
+- (void)didLoginWithEmail:(PFUser*)user;
+- (void)didLoginWithFacebook:(PFUser*)user;
+- (void)didLoginWithTwitter:(PFUser*)user;
 
 - (NSArray*) getLocationInfoList;
 - (NSString*) getCurrentAddress;

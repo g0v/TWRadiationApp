@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @implementation AppDelegate {
     NSString *userDisplayName;
@@ -27,6 +28,10 @@
         [Parse setApplicationId:@"hSfAuwdkTzTtKEYNHpduQHGFn1hPKCTTH0IgeCJf"
                       clientKey:@"WUECUlKCp3flUtFMu960xBj135dGjVgWMHg0eMi9"];
         [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+        // Use Parse to handle Facebook account login
+        [PFFacebookUtils initializeFacebook];
+        // Use Parse to handle Twitter account login
+        [PFTwitterUtils initializeWithConsumerKey:@"yc0Dm38fwz0yLUqQMoSORUSW9" consumerSecret:@"C3cvtWCJmpDEyuah3RxJwbvucSbq3Y8v4mt8RbB4fa3YBfprd7"];
 
         // Whenever a person opens the app, check for a cached session
         if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
@@ -73,7 +78,7 @@
     
     // Handle the user leaving the app while the Facebook login dialog is being shown
     // For example: when the user presses the iOS "home" button while the login dialog is active
-    [FBAppCall handleDidBecomeActive];
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -87,7 +92,9 @@
 // Override application:openURL:sourceApplication:annotation to call the FBsession object that handles the incoming URL
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return [FBSession.activeSession handleOpenURL:url];
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
 }
 
 #pragma mark - Facebook methods

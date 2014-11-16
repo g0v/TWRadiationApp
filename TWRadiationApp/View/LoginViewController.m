@@ -57,33 +57,33 @@
 }
 
 - (IBAction)twitterLogin:(id)sender {
+    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Twitter login.");
+            return;
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in with Twitter!");
+            [coreApi didLoginWithTwitter:user];
+        } else {
+            NSLog(@"User logged in with Twitter!");
+            [coreApi didLoginWithTwitter:user];
+        }     
+    }];
 }
 
 - (IBAction)facebookLogin:(id)sender {
     
-    // If the session state is any of the two "open" states when the button is clicked
-    if (FBSession.activeSession.state == FBSessionStateOpen
-        || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
-        
-        // Close the session and remove the access token from the cache
-        // The session state handler (in the app delegate) will be called automatically
-        [FBSession.activeSession closeAndClearTokenInformation];
-        
-        // If the session state is not any of the two "open" states when the button is clicked
-    } else {
-        // Open a session showing the user the login UI
-        // You must ALWAYS ask for public_profile permissions when opening a session
-        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
-                                           allowLoginUI:YES
-                                      completionHandler:
-         ^(FBSession *session, FBSessionState state, NSError *error) {
-             
-             // Retrieve the app delegate
-             AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-             // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
-             [appDelegate sessionStateChanged:session state:state error:error];
-         }];
-    }
+    [PFFacebookUtils logInWithPermissions:@[@"publish_actions"] block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in through Facebook!");
+            [coreApi didLoginWithFacebook:user];
+        } else {
+            NSLog(@"User logged in through Facebook!");
+            [coreApi didLoginWithFacebook:user];
+        }
+    }];
 }
 
 #pragma mark - UITextField Delegate
@@ -103,6 +103,7 @@
             if (user) {
                 // Do stuff after successful login.
                 NSLog(@"Login succussfully");
+                [coreApi didLoginWithEmail:user];
             } else {
                 // The login failed. Check error to see why.
                 UIAlertView* loginAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:[[error userInfo] objectForKey:@"error"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];

@@ -145,6 +145,34 @@
     return userInfo;
 }
 
+- (BOOL)loginByParse:(PFUser*) user type:(LOGIN_TYPE) type
+{
+    if (!user) {
+        return NO;
+    }
+    
+    isLogin     = YES;
+    loginType   = type;
+    currentUser = user;
+    
+    return YES;
+}
+
+- (void)didLoginWithEmail:(PFUser *)user
+{
+    [self loginByParse:user type:EMAIL];
+}
+
+- (void)didLoginWithFacebook:(PFUser *)user
+{
+    [self loginByParse:user type:FACEBOOK];
+}
+
+- (void)didLoginWithTwitter:(PFUser *)user
+{
+    [self loginByParse:user type:TWITTER];
+}
+
 - (void)logout
 {
     isLogin = NO;

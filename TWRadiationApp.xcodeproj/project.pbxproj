@@ -61,6 +61,7 @@
 		379B122D19025EBF00A336D7 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B122C19025EBF00A336D7 /* StatisticsViewController.m */; };
 		379B1236190268A000A336D7 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B1235190268A000A336D7 /* MyTabBarController.m */; };
 		379B123919026D4E00A336D7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379B123819026D4E00A336D7 /* CoreLocation.framework */; };
+		37DD64D71A169086006554F2 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DD64D61A169086006554F2 /* ParseFacebookUtils.framework */; };
 		37F963A1193123DA008C7EA9 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F96393193123DA008C7EA9 /* AFHTTPSessionManager.m */; };
 		37F963A2193123DA008C7EA9 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F96394193123DA008C7EA9 /* AFURLConnectionOperation.m */; };
 		37F963A3193123DA008C7EA9 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F96395193123DA008C7EA9 /* AFSecurityPolicy.m */; };
@@ -82,6 +83,7 @@
 		37FAFA9F19A91A8F00F1E1A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF911906D9B50028D91E /* SystemConfiguration.framework */; };
 		37FAFAA119A91B9800F1E1A7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FAFAA019A91B9800F1E1A7 /* Bolts.framework */; };
 		37FAFAA419A9216300F1E1A7 /* SingUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FAFAA319A9216300F1E1A7 /* SingUpViewController.m */; };
+		37FF01FA1A18748800D88027 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3760CF951906D9E70028D91E /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +176,7 @@
 		379B1234190268A000A336D7 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTabBarController.h; path = View/MyTabBarController.h; sourceTree = "<group>"; };
 		379B1235190268A000A336D7 /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTabBarController.m; path = View/MyTabBarController.m; sourceTree = "<group>"; };
 		379B123819026D4E00A336D7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		37DD64D61A169086006554F2 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "TWRadiationApp/Library/parse-library-1.2.21/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
 		37F9638E193123DA008C7EA9 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = Library/AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		37F9638F193123DA008C7EA9 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = Library/AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
 		37F96390193123DA008C7EA9 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = Library/AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
@@ -209,6 +212,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA92E8D195BADE7005BF09B /* Social.framework in Frameworks */,
+				37FF01FA1A18748800D88027 /* Accounts.framework in Frameworks */,
+				37DD64D71A169086006554F2 /* ParseFacebookUtils.framework in Frameworks */,
 				37FAFA9F19A91A8F00F1E1A7 /* SystemConfiguration.framework in Frameworks */,
 				37FAFA9E19A91A8200F1E1A7 /* StoreKit.framework in Frameworks */,
 				37FAFA9C19A91A7900F1E1A7 /* Security.framework in Frameworks */,
@@ -217,7 +223,6 @@
 				37FAFA9919A91A3900F1E1A7 /* libz.dylib in Frameworks */,
 				37FAFA9719A91A2800F1E1A7 /* CFNetwork.framework in Frameworks */,
 				37FAFA9519A91A1C00F1E1A7 /* AudioToolbox.framework in Frameworks */,
-				1AA92E8D195BADE7005BF09B /* Social.framework in Frameworks */,
 				1A5335A3195BB4C900A1E0B2 /* FacebookSDK.framework in Frameworks */,
 				3760CF9E1906DB980028D91E /* libsqlite3.0.dylib in Frameworks */,
 				3760CF8A1906D9810028D91E /* MapKit.framework in Frameworks */,
@@ -292,6 +297,7 @@
 		3744848A19023332008FD15C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37DD64D61A169086006554F2 /* ParseFacebookUtils.framework */,
 				37FAFAA019A91B9800F1E1A7 /* Bolts.framework */,
 				37FAFA9D19A91A8200F1E1A7 /* StoreKit.framework */,
 				37FAFA9819A91A3900F1E1A7 /* libz.dylib */,
