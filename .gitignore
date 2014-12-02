@@ -1,6 +1,27 @@
-
+# Xcode
+.DS_Store*
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
 *.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+*.xcworkspace
 
+# CocoaPods
+Pods/
+
+# Previously Excluded
 *.xcbkptlist
 
 TWRadiationApp.xcodeproj/project.xcworkspace/xcuserdata/charleslu.xcuserdatad/UserInterfaceState.xcuserstate
@@ -14,5 +35,3 @@ TWRadiationApp.xcodeproj/project.xcworkspace/xcuserdata/kentwelcome.xcuserdatad/
 TWRadiationApp.xcodeproj/xcuserdata/kentwelcome.xcuserdatad/xcschemes/TWRadiationApp.xcscheme
 
 TWRadiationApp.xcodeproj/xcuserdata/kentwelcome.xcuserdatad/xcschemes/xcschememanagement.plist
-
-*.xcuserstate
