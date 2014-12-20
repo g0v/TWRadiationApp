@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "Device.h"
 #import <Parse/Parse.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 #define TASK_INVALID                @"invalid"
 #define TASK_INCIDENTS              @"incidents"
@@ -52,6 +53,9 @@ typedef enum {
     BOOL        isLogin;
     LOGIN_TYPE  loginType;
     PFUser*     currentUser;
+    NSString*   currentUserName;
+    
+    
     NSDictionary *categoryTypeMapping;
 }
 

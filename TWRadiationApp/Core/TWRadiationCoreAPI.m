@@ -154,23 +154,35 @@
     isLogin     = YES;
     loginType   = type;
     currentUser = user;
-    
+
     return YES;
 }
 
 - (void)didLoginWithEmail:(PFUser *)user
 {
     [self loginByParse:user type:EMAIL];
+    currentUserName = currentUser.username;
 }
 
 - (void)didLoginWithFacebook:(PFUser *)user
 {
     [self loginByParse:user type:FACEBOOK];
+    
+    // Get detail user infomation by Facebook SDK
+    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            currentUserName = [result objectForKey:@"name"];
+        }  else {
+            // An error occurred, we need to handle the error
+            // See: https://developers.facebook.com/docs/ios/errors
+        }
+    }];
 }
 
 - (void)didLoginWithTwitter:(PFUser *)user
 {
     [self loginByParse:user type:TWITTER];
+    currentUserName = currentUser.username;
 }
 
 - (void)logout
