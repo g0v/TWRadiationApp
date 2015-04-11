@@ -53,7 +53,7 @@
     [locationManager startUpdatingLocation];
 
     locationInfoList = [coreApi getLocationInfoList];
-    NSLog(@">>loc=%@",locationInfoList);
+    //NSLog(@">>loc=%@",locationInfoList);
     
     NSArray *locArray = [self createAnnotations:locationInfoList];
     [mapView addAnnotations:locArray];

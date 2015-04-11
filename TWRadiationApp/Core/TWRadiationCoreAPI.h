@@ -26,8 +26,15 @@
 #define DEVICE_TYPE                 @"3"
 #define POSITION_TYPE               @"14"
 
+#define USER_ACCOUNT_PLIST          @"account.plist"
+
+#define LOGIN_TYPE_NONE             0
+#define LOGIN_TYPE_EMAIL            1
+#define LOGIN_TYPE_FACEBOOK         2
+#define LOGIN_TYPE_TWITTER          3
 
 typedef enum {
+    NONE,
     EMAIL,
     FACEBOOK,
     TWITTER
@@ -61,6 +68,7 @@ typedef enum {
 
 - (BOOL) isLogin;
 - (BOOL) isActiveAccount;
+- (NSString*) getCurrentUserName;
 
 - (BOOL) sendAccountInformationForRegist:(NSString*) account passwd:(NSString*) passwd deviceType:(NSString*) deviceType;
 - (NSDictionary*) loginWithAccount:(NSString*) account passwd:(NSString*) passwd;
@@ -90,4 +98,6 @@ typedef enum {
 - (NSString *) makeRestApiUrl:(NSString*)url task:(NSString*)action;
 - (id) getUshahidiRestApi:(NSString*)url task:(NSString *)action parameters:(NSDictionary*)params error:(NSError **)error;
 - (id) postUshahidiRestApi:(NSString*)url task:(NSString *)action parameters:(NSDictionary *)params error:(NSError **)error;
+- (id) getPresistentDataByName:(NSString*) plistName;
+- (BOOL) updatePresistentDataByName:(NSString*) plistName presistentData:(NSMutableDictionary*) presistentData;
 @end

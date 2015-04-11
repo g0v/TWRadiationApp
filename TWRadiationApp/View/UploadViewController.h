@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWRevealViewController.h"
 
 @interface UploadViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 

@@ -13,7 +13,7 @@
 @interface SidebarViewController () {
     NSArray *menuItems;
 
-    IBOutlet UITableView *tableview;
+    IBOutlet UITableView *sidebarTableview;
     NSString *userDisplayName;
     NSString *userID;
     NSString *userShortname;
@@ -28,15 +28,6 @@
     return UIStatusBarStyleLightContent;
 }
 
-/*- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}*/
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -48,14 +39,32 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    tableview.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    tableview.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
+    sidebarTableview.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+    sidebarTableview.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
     
     menuItems = @[@"title", @"login", @"upload"];
 
     // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
     AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate._delegate = self;
+    
+    if (coreApi == nil) {
+        coreApi = [appDelegate coreApi];
+    }
+    shouldUpdateMenu = NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if ([coreApi isLogin]) {
+        menuItems = LogoutMenuItemList;
+        [sidebarTableview reloadData];
+    }
+    else {
+        menuItems = LoginMenuItemList;
+        [sidebarTableview reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,13 +94,23 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    if (indexPath.row == 0) {
-        cell.textLabel.text = userDisplayName;
+    if (indexPath.row == 0 && [coreApi isLogin]) {
+        cell.textLabel.text = [coreApi getCurrentUserName];
         cell.textLabel.textColor = [UIColor lightGrayColor];
     }
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [sidebarTableview deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if ([[menuItems objectAtIndex:indexPath.row] isEqualToString:@"logout"]) {
+        [coreApi logout];
+        menuItems = LoginMenuItemList;
+        [tableView reloadData];
+    }
+}
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
@@ -118,8 +137,8 @@
 
         //if user had logged into FB previously, userLoginCallback will be called first but loginViewController is not initialized yet
         //so we update user id & pwd here
-        [loginViewController setUserID:userID];
-        [loginViewController setUserPassword:userShortname];
+        // [loginViewController setUserID:userID];
+        // [loginViewController setUserPassword:userShortname];
     }
 }
 
@@ -178,7 +197,7 @@
     userID = userid;
     userDisplayName = displayName;
 
-    [tableview reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    [sidebarTableview reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
     
     if (loginViewController) {
         [loginViewController setUserID:userID];

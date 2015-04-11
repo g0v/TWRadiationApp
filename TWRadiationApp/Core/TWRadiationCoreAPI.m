@@ -132,6 +132,16 @@
     return NO;
 }
 
+- (NSString*)getCurrentUserName
+{
+    if (isLogin) {
+        return currentUserName;
+    }
+    else {
+        return nil;
+    }
+}
+
 - (NSDictionary *)loginWithAccount:(NSString *)account passwd:(NSString *)passwd {
     NSDictionary *userInfo;
     if ([account isEqualToString:@"g0v"] && [passwd isEqualToString:@"g0v"]) {
@@ -147,6 +157,7 @@
 
 - (BOOL)loginByParse:(PFUser*) user type:(LOGIN_TYPE) type
 {
+    NSMutableDictionary *accountInfo = nil;
     if (!user) {
         return NO;
     }
@@ -154,6 +165,10 @@
     isLogin     = YES;
     loginType   = type;
     currentUser = user;
+    
+    accountInfo = [self getPresistentDataByName:USER_ACCOUNT_PLIST];
+    [accountInfo setObject:[[NSNumber alloc] initWithInt:type] forKey:@"AccountType"];
+    [self updatePresistentDataByName:USER_ACCOUNT_PLIST presistentData:accountInfo];
 
     return YES;
 }
@@ -187,7 +202,17 @@
 
 - (void)logout
 {
+    NSMutableDictionary *accountInfo = nil;
+    currentUserName = nil;
+    currentUser = nil;
     isLogin = NO;
+    
+    accountInfo = [self getPresistentDataByName:USER_ACCOUNT_PLIST];
+    if (accountInfo) {
+        [accountInfo setObject:[[NSNumber alloc] initWithInt:NONE] forKey:@"AccountType"];
+        [self updatePresistentDataByName:USER_ACCOUNT_PLIST presistentData:accountInfo];
+    }
+    
 }
 
 - (BOOL)sendAccountInformationForRegist:(NSString *)account passwd:(NSString *)passwd deviceType:(NSString *)deviceType
@@ -428,6 +453,49 @@
     
     jsonObj = [self postUshahidiRestApi:RADIATION_DEV_REST_RUL task:TASK_SUBMIT parameters:submitParameters error:&error];
     return jsonObj;
+}
+
+#pragma mark Store Data by plist
+- (id) getPresistentDataByName:(NSString*) plistName
+{
+    // Create a list of paths.
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    // Get a path to your documents directory from the list.
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *documentPath = [documentsDirectory stringByAppendingPathComponent:plistName];
+    NSMutableDictionary *historyList = [[NSMutableDictionary alloc] initWithContentsOfFile:documentPath];
+    if (historyList == nil) {
+        // Create file if it don't exist
+        NSFileManager *filemgr = [NSFileManager defaultManager];
+        [filemgr createFileAtPath:documentPath contents:nil attributes:nil];
+    }
+    return historyList;
+}
+
+- (BOOL)updatePresistentDataByName:(NSString *)plistName presistentData:(NSMutableDictionary*)presistentData
+{
+    // Create a list of paths.
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    // Get a path to your documents directory from the list.
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *documentPath = [documentsDirectory stringByAppendingPathComponent:plistName];
+    
+    if (presistentData == nil) {
+        presistentData = [[NSMutableDictionary alloc] init];
+    }
+    
+    // Write back to plist file
+    BOOL status = [presistentData writeToFile:documentPath atomically:YES];
+    /*
+    if (status == YES) {
+        NSLog(@"Write to %@ sccusses\n",plistName);
+    } else {
+        NSLog(@"Write fail in %@\n",plistName);
+    }
+    */
+    return status;
 }
 
 @end

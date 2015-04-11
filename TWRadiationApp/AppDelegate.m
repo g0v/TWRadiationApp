@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Social/Social.h>
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
@@ -18,11 +19,36 @@
 
 @synthesize coreApi = _coreApi;
 
+- (void)loginUserAccountByType:(LOGIN_TYPE) type accountInfo:(NSDictionary*)accountInfo
+{
+    if (type == EMAIL) {
+    }
+    else if (type == FACEBOOK) {
+        NSLog(@"Login by Facebook");
+        [PFFacebookUtils logInWithPermissions:@[@"publish_actions"] block:^(PFUser *user, NSError *error) {
+            if (!user) {
+                NSLog(@"Uh oh. The user cancelled the Facebook login.");
+            } else if (user.isNew) {
+                NSLog(@"User signed up and logged in through Facebook!");
+                [self.coreApi didLoginWithFacebook:user];
+            } else {
+                NSLog(@"User logged in through Facebook!");
+                [self.coreApi didLoginWithFacebook:user];
+            }
+        }];
+
+    }
+    else if (type == TWITTER) {
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     if (self.coreApi == nil) {
         self.coreApi = [[TWRadiationCoreAPI alloc] init];
+        
+        id accountInfo = [self.coreApi getPresistentDataByName:USER_ACCOUNT_PLIST];
         
         // Use Parse to handle login
         [Parse setApplicationId:@"hSfAuwdkTzTtKEYNHpduQHGFn1hPKCTTH0IgeCJf"
@@ -32,7 +58,13 @@
         [PFFacebookUtils initializeFacebook];
         // Use Parse to handle Twitter account login
         [PFTwitterUtils initializeWithConsumerKey:@"yc0Dm38fwz0yLUqQMoSORUSW9" consumerSecret:@"C3cvtWCJmpDEyuah3RxJwbvucSbq3Y8v4mt8RbB4fa3YBfprd7"];
-
+        
+        NSNumber *accountType = [accountInfo objectForKey:@"AccountType"];
+        if (accountType != nil && [accountType intValue] != NONE) {
+            NSLog(@"User had logined");
+            [self loginUserAccountByType:[accountType intValue] accountInfo:accountInfo];
+        }
+        
         // Whenever a person opens the app, check for a cached session
         if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
             NSLog(@"Found a cached session");

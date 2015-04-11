@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "SWRevealViewController.h"
+#import "TWRadiationCoreAPI.h"
 
-@interface SidebarViewController : UIViewController <userLoginCallback>
+#define LoginMenuItemList   @[@"empty", @"login", @"upload"]
+#define LogoutMenuItemList  @[@"title", @"logout", @"upload"]
+
+@interface SidebarViewController : UIViewController <userLoginCallback, UITableViewDelegate, UITableViewDataSource>
+{
+    TWRadiationCoreAPI *coreApi;
+    BOOL                shouldUpdateMenu;
+}
 
 @end

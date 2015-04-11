@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "SWRevealViewController.h"
 
 @interface LoginViewController : UIViewController </*FBLoginViewDelegate,*/UITextFieldDelegate, UIAlertViewDelegate>
 {

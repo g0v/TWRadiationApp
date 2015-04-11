@@ -64,9 +64,11 @@
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in with Twitter!");
             [coreApi didLoginWithTwitter:user];
+            [self performSegueWithIdentifier:@"CompleteLogin" sender:self];
         } else {
             NSLog(@"User logged in with Twitter!");
             [coreApi didLoginWithTwitter:user];
+            [self performSegueWithIdentifier:@"CompleteLogin" sender:self];
         }     
     }];
 }
@@ -79,9 +81,11 @@
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in through Facebook!");
             [coreApi didLoginWithFacebook:user];
+            [self performSegueWithIdentifier:@"CompleteLogin" sender:self];
         } else {
             NSLog(@"User logged in through Facebook!");
             [coreApi didLoginWithFacebook:user];
+            [self performSegueWithIdentifier:@"CompleteLogin" sender:self];
         }
     }];
 }
@@ -104,6 +108,7 @@
                 // Do stuff after successful login.
                 NSLog(@"Login succussfully");
                 [coreApi didLoginWithEmail:user];
+                [self performSegueWithIdentifier:@"CompleteLogin" sender:self];
             } else {
                 // The login failed. Check error to see why.
                 UIAlertView* loginAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:[[error userInfo] objectForKey:@"error"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
